@@ -25,11 +25,8 @@ set sw=2
 set noautoindent
 set nosmartindent
 
-" オートインデント時にインデントする文字数
-set shiftwidth=2
-
 " カーソルを行頭、行末で止まらないようにする
-set whichwrap=b,s,h,s,<,>,[,]
+set whichwrap=b,s,h,l,<,>,[,]
 
 " vimコマンドラインの補完候補を表示
 set wildmenu
@@ -58,4 +55,3 @@ set ffs=unix,dos,mac
 if exists('&ambiwidth')
   set ambiwidth=double
 endif
-

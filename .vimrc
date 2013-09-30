@@ -7,23 +7,43 @@ call neobundle#rc(expand('~/.vim/bundle/'))
 " JSのsyntax
 NeoBundle 'jelera/vim-javascript-syntax'
 " vim上で行う言語等のコマンド補完
-NeoBundle 'Shougo/neocomplcache'
+NeoBundle 'Shougo/neocomplcache.vim'
+" スニペット集
+NeoBundle 'Shougo/neosnippet.vim'
 " neocomplcacheを更に賢くオムニ補完してくれる
 NeoBundle 'teramako/jscomplete-vim'
 " omni補完のnode.jsバージョン
 NeoBundle 'myhere/vim-nodejs-complete'
 " 現在のzen-coding
 NeoBundle 'mattn/emmet-vim'
-" スニペット集
-NeoBundle 'Shougo/neosnippet'
 " 味気ないlaststatusをかっこ良くしてくれる現在の人気
 NeoBundle 'itchyny/lightline.vim'
-" ちょっとした宗教戦争からユーザが若干離れて行ったプラグインだがまだまだ人気
+" fontpatcherの為
 NeoBundle 'Lokaltog/vim-powerline'
 " そのlaststatus上で使うguifontが入っているらしいが使い方がよく分からんくて使ってない
-NeoBundle 'Lokaltog/powerline-fonts'
+" NeoBundle 'Lokaltog/powerline-fonts'
 " CoffeeScriptのsyntax
 NeoBundle 'kchmck/vim-coffee-script'
+
+" TweetVimとその依存関係のプラグイン
+NeoBundle 'basyura/TweetVim'
+NeoBundle 'basyura/twibill.vim'
+NeoBundle 'basyura/bitly.vim'
+" webapiが詰め込まれたvim
+NeoBundle 'mattn/webapi-vim'
+" ふぁぼ
+NeoBundle 'mattn/favstar-vim'
+" vimからブラウザを開くプラグイン
+NeoBundle 'tyru/open-browser.vim'
+" アウトライン表示
+NeoBundle 'Shougo/unite-outline'
+" ファイラー
+NeoBundle 'Shougo/unite.vim'
+
+" フィルター機能
+NeoBundle 'rhysd/tweetvim-advanced-filter'
+
+filetype plugin indent on
 
 " lightlineのカラー設定
 if !has('gui_running')
@@ -39,7 +59,8 @@ let g:lightline = {
 let g:jscomplete_use = ['dom', 'moz', 'es6th']
 
 " 分割した設定ファイルを全て読み込む
-set rtp+=~/.vim
+set rtp^=~/.vim
+set rtp+=~/.vim/userautoload/
 runtime! userautoload/*.vim
 
-filetype plugin indent on
+"filetype plugin indent on

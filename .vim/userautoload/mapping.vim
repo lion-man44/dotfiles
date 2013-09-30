@@ -1,7 +1,5 @@
 " insertモードから抜ける
 inoremap <silent> jj <Esc>
-" visualモードから抜ける
-vnoremap <silent> qq <Esc> 
 
 " 挿入モードでのカーソル移動
 inoremap <C-j> <Down>

@@ -1,0 +1,30 @@
+[user]
+	name = amanattou44
+	email = amanattou44@gmail.com
+[alias]
+	i = init
+	cl = clone
+	conf = config
+	s = status
+	b = branch
+	ba = branch -a
+	f = fetch
+	d = diff
+	g = grep
+	remo = remote -v
+	sh = show
+	so = remote s origin
+	ad = add
+	ci = commit
+	co = checkout
+	l = log --graph
+	lo = log origin
+	la = log --graph --all --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(bold white)― %an%C(reset)%C(bold yellow)%d%C(reset)' --abbrev-commit --date=relative
+	lp = log -p
+[color]
+	status = auto
+	branch = auto
+	diff = auto
+	grep = auto
+[core]
+	editor = vim
