@@ -1,0 +1,14 @@
+alias ls="ls --color"
+alias ll="ls -ltr"
+alias la="ls -a"
+
+alias vi="vim"
+
+alias mkdir="mkdir -p"
+
+alias g="git"
+
+alias b="bundle"
+alias be="b exec"
+
+alias rs="redscript"
