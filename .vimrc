@@ -42,21 +42,9 @@ NeoBundle 'Shougo/unite.vim'
 
 " フィルター機能
 NeoBundle 'rhysd/tweetvim-advanced-filter'
-
+" JSONかラーリング
+NeoBundle 'elzr/vim-json'
 filetype plugin indent on
-
-" lightlineのカラー設定
-if !has('gui_running')
-  set t_Co=256
-endif
-
-" laststatusのカラースキーマ
-let g:lightline = {
-  \  'colorscheme': 'solarized',
-\  }
-
-" JavaScriptのメソッド補完を可能にする設定
-let g:jscomplete_use = ['dom', 'moz', 'es6th']
 
 " 分割した設定ファイルを全て読み込む
 set rtp^=~/.vim

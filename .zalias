@@ -11,8 +11,10 @@ alias mkdir="mkdir -p"
 alias g="git"
 
 alias r="ruby"
+
 alias b="bundle"
 alias be="b exec"
+alias ber="be rake"
 
 alias e="express"
 
