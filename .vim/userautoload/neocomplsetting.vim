@@ -19,7 +19,7 @@ let g:neocomplcache_enable_underbar_completion = 1
 let g:neocomplcache_enable_camel_case_completion = 1
 
 " <C-h>もしくは<BS>を押下時に確実にポップアップを削除
-"inoremap <expr><C-h> neocomplcache#smart_close_popup() . "\<C-h>"
+inoremap <expr><C-h> neocomplcache#smart_close_popup() . "\<C-h>"
 inoremap <expr><BS> neocomplcache#smart_close_popup() . "\<BS>"
 " 現在選択している候補をキャンセルし、確実にポップアップを削除
 inoremap <expr><C-e> neocomplcache#cancel_popup() . "\<C-e>"

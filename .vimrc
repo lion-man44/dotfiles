@@ -42,7 +42,7 @@ NeoBundle 'Shougo/unite.vim'
 
 " フィルター機能
 NeoBundle 'rhysd/tweetvim-advanced-filter'
-" JSONかラーリング
+" JSONカラーリング
 NeoBundle 'elzr/vim-json'
 filetype plugin indent on
 
