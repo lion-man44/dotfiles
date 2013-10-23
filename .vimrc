@@ -17,11 +17,10 @@ NeoBundle 'myhere/vim-nodejs-complete'
 " 現在のzen-coding
 NeoBundle 'mattn/emmet-vim'
 " 味気ないlaststatusをかっこ良くしてくれる現在の人気
-NeoBundle 'itchyny/lightline.vim'
+NeoBundle 'itchyny/lightline.vim', {'type': 'nosync'}
+
 " fontpatcherの為
 NeoBundle 'Lokaltog/vim-powerline'
-" そのlaststatus上で使うguifontが入っているらしいが使い方がよく分からんくて使ってない
-" NeoBundle 'Lokaltog/powerline-fonts'
 " CoffeeScriptのsyntax
 NeoBundle 'kchmck/vim-coffee-script'
 
@@ -44,11 +43,14 @@ NeoBundle 'Shougo/unite.vim'
 NeoBundle 'rhysd/tweetvim-advanced-filter'
 " JSONカラーリング
 NeoBundle 'elzr/vim-json'
+" 自前のvimプラグイン、管理プラグイン
+NeoBundle 'tpope/vim-pathogen'
 filetype plugin indent on
+
+execute pathogen#infect()
 
 " 分割した設定ファイルを全て読み込む
 set rtp^=~/.vim
 set rtp+=~/.vim/userautoload/
 runtime! userautoload/*.vim
 
-"filetype plugin indent on

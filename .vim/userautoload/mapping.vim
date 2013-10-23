@@ -1,8 +1,10 @@
 " insertモードから抜ける
 inoremap <silent> jj <Esc>
+" visualモードから抜ける
+vnoremap <silent> q <Esc>
 
-" neosnipet内にてsモードに<C-h>がBSと同等の役割を担っている為、キーを再割当
-snoremap <C-h> <Nop>
+" Esc2回でハイライトを消す
+nnoremap <Esc><Esc> uu :nohlsearch<CR><Esc>
 
 " 挿入モードでのカーソル移動
 inoremap <C-j> <Down>
@@ -13,3 +15,4 @@ inoremap <C-l> <Right>
 " 行移動を見た目上に移動する
 noremap j gj
 noremap k gk
+

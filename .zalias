@@ -1,13 +1,16 @@
+## Unix like command
 alias ll="ls -ltr"
 alias la="ls -a"
 alias ls="ls -G"
 
 alias vi="vim"
-
 alias hist="history -i"
-
 alias mkdir="mkdir -p"
 
+alias grep="grep --color"
+alias diff="colordiff"
+
+## User command
 alias g="git"
 
 alias r="ruby"
@@ -19,3 +22,4 @@ alias ber="be rake"
 alias e="express"
 
 alias rs="redscript"
+alias cs="coffee"
