@@ -45,6 +45,8 @@ NeoBundle 'rhysd/tweetvim-advanced-filter'
 NeoBundle 'elzr/vim-json'
 " 自前のvimプラグイン、管理プラグイン
 NeoBundle 'tpope/vim-pathogen'
+" 環境させ入っていれば、勝手にチェックを走らせてくれるプラグイン
+NeoBundle 'scrooloose/syntastic'
 filetype plugin indent on
 
 execute pathogen#infect()
