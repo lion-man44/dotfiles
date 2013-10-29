@@ -11,7 +11,7 @@ NeoBundle 'Shougo/neocomplcache.vim'
 " スニペット集
 NeoBundle 'Shougo/neosnippet.vim'
 " neocomplcacheを更に賢くオムニ補完してくれる
-NeoBundle 'teramako/jscomplete-vim'
+NeoBundle 'https://bitbucket.org/teramako/jscomplete-vim'
 " omni補完のnode.jsバージョン
 NeoBundle 'myhere/vim-nodejs-complete'
 " 現在のzen-coding
@@ -47,6 +47,8 @@ NeoBundle 'elzr/vim-json'
 NeoBundle 'tpope/vim-pathogen'
 " 環境させ入っていれば、勝手にチェックを走らせてくれるプラグイン
 NeoBundle 'scrooloose/syntastic'
+" webブラウザ
+NeoBundle 'yuratomo/w3m.vim'
 filetype plugin indent on
 
 execute pathogen#infect()
