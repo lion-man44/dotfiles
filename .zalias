@@ -1,7 +1,7 @@
 ## Unix like command
 alias ll="ls -ltr"
 alias la="ls -a"
-alias ls="ls -G"
+#alias ls="ls -G"
 
 alias vi="vim"
 alias hist="history -i"

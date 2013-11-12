@@ -19,8 +19,6 @@ NeoBundle 'mattn/emmet-vim'
 " 味気ないlaststatusをかっこ良くしてくれる現在の人気
 NeoBundle 'itchyny/lightline.vim', {'type': 'nosync'}
 
-" fontpatcherの為
-NeoBundle 'Lokaltog/vim-powerline'
 " CoffeeScriptのsyntax
 NeoBundle 'kchmck/vim-coffee-script'
 
@@ -49,6 +47,12 @@ NeoBundle 'tpope/vim-pathogen'
 NeoBundle 'scrooloose/syntastic'
 " webブラウザ
 NeoBundle 'yuratomo/w3m.vim'
+" css3のsyntax
+NeoBundle 'hail2u/vim-css3-syntax'
+" sass,scssのcompile
+NeoBundle 'AtsushiM/sass-compile.vim'
+" html5のindentとsyntaxを追加
+NeoBundle 'taichouchou2/html5.vim'
 filetype plugin indent on
 
 execute pathogen#infect()
