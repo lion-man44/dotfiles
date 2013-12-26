@@ -4,6 +4,7 @@ export PATH=/usr/local/bin:$PATH
 
 ## rbenvのパス設定
 #
+export RUBY_CONFIGURE_OPTS="--with-openssl-dir=`brew --prefix openssl` --with-readline-dir=`brew --prefix readline`"
 export PATH=$HOME/.rbenv/bin:$PATH
 eval "$(rbenv init -)"
 
