@@ -1,10 +1,10 @@
 " insertモードから抜ける
 inoremap <silent> jj <Esc>
 " visualモードから抜ける
- vnoremap <silent> q <Esc>
+vnoremap <silent> q <Esc>
 
 " Esc2回でハイライトを消す
-" nnoremap <Esc><Esc> uu :nohlsearch<CR><Esc>
+nnoremap <Esc><Esc> :nohlsearch<CR><Esc>
 
 " 挿入モードでのカーソル移動
 inoremap <C-j> <Down>
