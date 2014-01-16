@@ -1,3 +1,4 @@
+# Linux commands
 alias ls="ls --color"
 alias ll="ls -ltr"
 alias la="ls -a"
@@ -6,6 +7,20 @@ alias vi="vim"
 
 alias mkdir="mkdir -p"
 
+alias cd="pushd > /dev/null"
+
+#pushd() {
+#  if [ $# -eq 0 ]; then
+#    DIR="$HOME"
+#  else
+#    DIR="$1"
+#  fi
+#
+#  builtin pushd "$DIR" > /dev/null
+#  echo -n "DIRSTACK: "
+#  dirs
+#}
+# User commands
 alias g="git"
 
 alias b="bundle"

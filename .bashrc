@@ -11,6 +11,9 @@ export LANG=ja_JP.utf8
 HISTSIZE=600000
 HISTTIMEFORMAT='%Y/%m/%d %H:%M:%S '
 
+# bashの補完を拡張
+#. /usr/share/bash-completion
+
 # gitブランチの可視化に使用するファイル
 . ~/.git-completion.bash
 
