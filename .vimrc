@@ -19,8 +19,6 @@ NeoBundle 'mattn/emmet-vim'
 " 味気ないlaststatusをかっこ良くしてくれる現在の人気
 NeoBundle 'itchyny/lightline.vim', {'type': 'nosync'}
 
-" fontpatcherの為
-NeoBundle 'Lokaltog/vim-powerline'
 " CoffeeScriptのsyntax
 NeoBundle 'kchmck/vim-coffee-script'
 

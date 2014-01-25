@@ -9,10 +9,10 @@ set noswapfile
 "set noimdisableactivate
 
 " 制御シーケンスの変更
-" let &t_ti.="\e[1 q"
+"let &t_ti.="\e[1 q"
 let &t_SI.="\e]50;CursorShape=1\x7"
 let &t_EI.="\e]50;CursorShape=0\x7"
-" let &t_te.="\e[0 q"
+"let &t_te.="\e[0 q"
 
 " beep音殺す
 set vb t_vb=
@@ -53,7 +53,7 @@ set laststatus=2
 set termencoding=utf-8
 set encoding=utf-8
 set fenc=utf-8
-scriptencoding utf-8
+"scriptencoding utf-8
 
 set ffs=unix,dos,mac
 " UTF-8の表示出来ない文字で位置ずれしないよう設定

@@ -27,3 +27,5 @@ alias b="bundle"
 alias be="b exec"
 
 alias rs="redscript"
+
+alias ca="casperjs"

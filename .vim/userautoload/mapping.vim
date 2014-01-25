@@ -4,7 +4,7 @@ inoremap <silent> jj <Esc>
 vnoremap <silent> q <Esc>
 
 " Esc2回でハイライトを消す
-nnoremap <Esc><Esc> uu :nohlsearch<CR><Esc>
+nnoremap <Esc><Esc> qq :nohlsearch<CR><Esc>
 
 " 挿入モードでのカーソル移動
 inoremap <C-j> <Down>
