@@ -61,6 +61,7 @@ node_version() {
 #
 PROMPT='%{${fg[cyan]}%}%~%{${reset_color}%}
 [%n]%1(v|%F{green}%1v%f|)$ '
+# %nに戻す
 
 ## cdの履歴機能
 #

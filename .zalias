@@ -23,3 +23,5 @@ alias e="express"
 
 alias rs="redscript"
 alias cs="coffee"
+
+alias gist="gist -o"

@@ -16,3 +16,8 @@ inoremap <C-l> <Right>
 noremap j gj
 noremap k gk
 
+" 全てのマッピングの表示
+command!
+\ -nargs=* -complete=mapping
+\ AllMaps
+\ map <args> | map! <args> | lmap <args>

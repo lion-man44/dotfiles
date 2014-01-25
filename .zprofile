@@ -4,6 +4,7 @@ export PATH=/usr/local/bin:$PATH
 
 ## rbenvのパス設定
 #
+export RUBY_CONFIGURE_OPTS="--with-openssl-dir=`brew --prefix openssl` --with-readline-dir=`brew --prefix readline`"
 export PATH=$HOME/.rbenv/bin:$PATH
 eval "$(rbenv init -)"
 
@@ -18,6 +19,5 @@ export PGDATA=/usr/local/var/postgres
 
 ## pythonのバージョン管理ツールの設定ファイル読み込み
 # 
-[[ -s $HOME/.pythonz/etc/bashrc ]] && source $HOME/.pythonz/etc/bashrc
-# [[ -s "$HOME/.pythonbrew/etc/bashrc" ]] && source "$HOME/.pythonbrew/etc/bashrc"
-
+export PATH=$PATH:/usr/local/opt/pyenv/bin
+[[ -s "$HOME/.pythonbrew/etc/bashrc" ]] && source "$HOME/.pythonbrew/etc/bashrc"

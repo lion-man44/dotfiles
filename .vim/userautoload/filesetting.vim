@@ -16,7 +16,7 @@ if has("autocmd")
   " *.coffeeファイルを開いた時、読み込んだ時にファイルタイプを設定する
   autocmd BufNewFile,BufRead *.coffee setlocal ft=coffee
   " 書き込み時にコンパイルする
-  autocmd BufWritePost *.coffee silent make!
+  autocmd BufWritePost *.coffee silent make! -bc
   nnoremap <silent> <C-c> :CoffeeCompile vert <CR><C-w>h
 
   " omni補完設定

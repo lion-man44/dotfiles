@@ -47,6 +47,12 @@ NeoBundle 'tpope/vim-pathogen'
 NeoBundle 'scrooloose/syntastic'
 " webブラウザ
 NeoBundle 'yuratomo/w3m.vim'
+" css3のsyntax
+NeoBundle 'hail2u/vim-css3-syntax'
+" sass,scssのcompile
+NeoBundle 'AtsushiM/sass-compile.vim'
+" html5のindentとsyntaxを追加
+NeoBundle 'taichouchou2/html5.vim'
 filetype plugin indent on
 
 execute pathogen#infect()
