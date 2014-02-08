@@ -21,3 +21,6 @@ export PGDATA=/usr/local/var/postgres
 # 
 export PATH=$PATH:/usr/local/opt/pyenv/bin
 [[ -s "$HOME/.pythonbrew/etc/bashrc" ]] && source "$HOME/.pythonbrew/etc/bashrc"
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
