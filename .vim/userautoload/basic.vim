@@ -40,6 +40,9 @@ set showcmd
 " 行数を表示するスペースの領域を設定
 set nuw=3
 
+" 8進数扱いを止める(007のインクリメントなど)
+set nf=
+
 " 全角スペースの定義
 hi ZenkakuSpace gui=underline guibg=DarkBlue cterm=underline ctermfg=LightBlue
 " 全角スペースの色変更
