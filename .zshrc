@@ -82,3 +82,6 @@ SAVEHIST=5000000
 setopt share_history
 # 補完時に履歴を自動的に展開する
 setopt hist_expand
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
