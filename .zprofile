@@ -19,7 +19,7 @@ export PGDATA=/usr/local/var/postgres
 
 ## pythonのバージョン管理ツールの設定ファイル読み込み
 # 
-export PATH=$PATH:/usr/local/opt/pyenv/bin
+#export PATH=$PATH:/usr/local/opt/pyenv/bin
 [[ -s "$HOME/.pythonbrew/etc/bashrc" ]] && source "$HOME/.pythonbrew/etc/bashrc"
 
 ### Added by the Heroku Toolbelt
