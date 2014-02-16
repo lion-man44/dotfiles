@@ -24,5 +24,5 @@ if has("autocmd")
   nnoremap <silent> <C-c> :CoffeeCompile vert <CR><C-w>h
 
   " omni補完設定
-  " autocmd FileType javascript setlocal omnifunc=jscomplete#CompleteJS
+  autocmd FileType javascript setlocal omnifunc=jscomplete#CompleteJS
 endif
