@@ -65,6 +65,9 @@ else
   " html5のindentとsyntaxを追加
   NeoBundle 'taichouchou2/html5.vim'
 
+  " pythonのシンタックスチェッカー
+  NeoBundle 'tell-k/vim-autopep8'
+
   " インストールされていないプラグインのチェック
   NeoBundleCheck
   filetype plugin indent on
