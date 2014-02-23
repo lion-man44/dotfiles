@@ -28,3 +28,7 @@ inoremap <expr><C-y> neocomplcache#close_popup() . "\<C-y>"
 " JavaScriptのメソッド補完を可能にする設定
 let g:jscomplete_use = ['dom', 'moz', 'es6th']
 
+if !exists('g:neocomplcache_omni_functions')
+  let g:neocomplcache_omni_functions = {}
+endif
+let g:neocomplcache_omni_functions.javascript = ['nodejscomplete#CompleteJS', 'javascript#CompleteJS']

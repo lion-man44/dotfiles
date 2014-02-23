@@ -28,5 +28,6 @@ if has("autocmd")
   autocmd BufWritePost *.coffee silent make! -bc
   nnoremap <silent> <C-c> :CoffeeCompile vert <CR><C-w>h
   " omni補完設定
-  autocmd FileType javascript setlocal omnifunc=jscomplete#CompleteJS
+  "autocmd FileType javascript setlocal omnifunc=jscomplete#CompleteJS
+  "autocmd FileType javascript setlocal omnifunc=nodejscomplete#CompleteJS
 endif
