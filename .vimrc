@@ -1,6 +1,6 @@
 let s:noplugin = 0
 let s:bundle_root = expand('~/.vim/bundle/')
-let s:user_setting_root = s:bundle_root . '/userautoload/'
+let s:user_setting_root = '~/.vim/userautoload/'
 let s:neobundle_root = s:bundle_root . '/neobundle.vim'
 if !isdirectory(s:neobundle_root) || v:version < 702
   " Neobundleが存在しない、またはvimのversionが古い場合はプラグインを一切読み込まない
@@ -21,10 +21,6 @@ else
   NeoBundle 'Shougo/neocomplcache.vim'
   " スニペット集
   NeoBundle 'Shougo/neosnippet.vim'
-  " neocomplcacheを更に賢くオムニ補完してくれる
-  NeoBundle 'https://bitbucket.org/teramako/jscomplete-vim'
-  " omni補完のnode.jsバージョン
-  NeoBundle 'myhere/vim-nodejs-complete'
   " 現在のzen-coding
   NeoBundle 'mattn/emmet-vim'
   " 味気ないlaststatusをかっこ良くしてくれる現在の人気
@@ -52,8 +48,6 @@ else
   NeoBundle 'rhysd/tweetvim-advanced-filter'
   " JSONカラーリング
   NeoBundle 'elzr/vim-json'
-  " 自前のvimプラグイン、管理プラグイン
-  NeoBundle 'tpope/vim-pathogen'
   " 環境させ入っていれば、勝手にチェックを走らせてくれるプラグイン
   NeoBundle 'scrooloose/syntastic'
   " webブラウザ
@@ -68,13 +62,19 @@ else
   " pythonのシンタックスチェッカー
   NeoBundle 'tell-k/vim-autopep8'
 
+  " neocomplcacheを更に賢くオムニ補完してくれる
+  NeoBundle 'marijnh/tern_for_vim', {
+        \ 'build': {
+        \   'others': 'npm install'
+        \ }}
+  " omni補完のnode.jsバージョン
+  NeoBundle 'myhere/vim-nodejs-complete'
   " インストールされていないプラグインのチェック
   NeoBundleCheck
   filetype plugin indent on
 
-  execute pathogen#infect()
-
   " 分割した設定ファイルを全て読み込む
+
   set rtp^=~/.vim
   set rtp+=s:user_setting_root
   runtime! userautoload/*.vim
