@@ -19,8 +19,6 @@ else
   NeoBundle 'jelera/vim-javascript-syntax'
   " vim上で行う言語等のコマンド補完
   NeoBundle 'Shougo/neocomplcache.vim'
-  " スニペット集
-  NeoBundle 'Shougo/neosnippet.vim'
   " 現在のzen-coding
   NeoBundle 'mattn/emmet-vim'
   " 味気ないlaststatusをかっこ良くしてくれる現在の人気
