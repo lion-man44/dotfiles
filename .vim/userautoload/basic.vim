@@ -1,6 +1,6 @@
 " 基本設定
 " カラー機能
-colorscheme molokai
+"colorscheme molokai
 syntax on
 " .swpファイルを作成しない
 set noswapfile
@@ -77,5 +77,5 @@ set laststatus=2
 " 検索文字をハイライト
 set hlsearch
 " バックスラッシュ・クエスチョンを自動的にエスケープ
-cnoremap <expr> / getcmdtype() == '/' ? '\/' : '/'
-cnoremap <expr> ? getcmdtype() == '?' ? '\?' : '?'
+"cnoremap <expr> / getcmdtype() == '/' ? '\/' : '/'
+"cnoremap <expr> ? getcmdtype() == '?' ? '\?' : '?'
