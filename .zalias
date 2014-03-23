@@ -28,3 +28,6 @@ alias cs="coffee"
 alias gist="gist -o"
 
 alias pybrew="pythonbrew"
+
+# tmux command
+alias tmuxn="tmux new-session \; source-file ~/.tmux/session"
