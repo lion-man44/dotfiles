@@ -22,5 +22,11 @@ export PGDATA=/usr/local/var/postgres
 #export PATH=$PATH:/usr/local/opt/pyenv/bin
 [[ -s "$HOME/.pythonbrew/etc/bashrc" ]] && source "$HOME/.pythonbrew/etc/bashrc"
 
+## perlのバージョン管理ツール、plenvのPATH通し
+#
+export PATH=$HOME/.plenv/bin:$PATH
+eval "$(plenv init -)"
+export PERL5LIB=$HOME/.plenv/versions/5.16.3/lib/perl5:$PERL5LIB
+
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
