@@ -67,6 +67,10 @@ else
         \ }}
   " omni補完のnode.jsバージョン
   NeoBundle 'myhere/vim-nodejs-complete'
+
+  " ctagsの結果をアウトラインして表示する
+  NeoBundle 'vim-scripts/taglist.vim'
+
   " インストールされていないプラグインのチェック
   NeoBundleCheck
   filetype plugin indent on
