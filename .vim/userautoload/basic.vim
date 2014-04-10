@@ -17,6 +17,11 @@ set nf=
 "set noimdisableactivate
 " '<'や'>'でインデントする際にshiftwidthの倍数に丸める
 set shiftround
+" vimDiffの色変え
+hi DiffAdd    ctermfg=black ctermbg=2
+hi DiffChange ctermfg=black ctermbg=3
+hi DiffDelete ctermfg=black ctermbg=6
+hi DiffText   ctermfg=black ctermbg=7
 
 
 " エンコード関係

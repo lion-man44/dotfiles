@@ -71,6 +71,9 @@ else
   " ctagsの結果をアウトラインして表示する
   NeoBundle 'vim-scripts/taglist.vim'
 
+  " F#用のsyntax
+  NeoBundle 'kongo2002/fsharp-vim'
+
   " インストールされていないプラグインのチェック
   NeoBundleCheck
   filetype plugin indent on
