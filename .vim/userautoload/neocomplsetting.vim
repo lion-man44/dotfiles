@@ -1,6 +1,6 @@
 " 補完候補のポップアップの色設定
 " Pmenu アイテムの色 PmenuSel 現在選択中の色 PmenuSbar スクロールバーの色 PmenuThumb スクロールバーの現在位置を示す色
-hi Pmenu ctermbg=lightgreen ctermfg=white
+hi Pmenu ctermbg=lightgreen ctermfg=black
 hi PmenuSel ctermbg=lightred
 hi PmenuSbar ctermbg=black
 hi PmenuThumb ctermfg=lightcyan
