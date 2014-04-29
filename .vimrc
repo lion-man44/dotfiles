@@ -74,6 +74,9 @@ else
   " F#用のsyntax
   NeoBundle 'kongo2002/fsharp-vim'
 
+  " 英語から日本語翻訳
+  NeoBundle 'mattn/googletranslate-vim'
+
   " インストールされていないプラグインのチェック
   NeoBundleCheck
   filetype plugin indent on
