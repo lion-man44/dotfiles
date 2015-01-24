@@ -1,6 +1,6 @@
 [user]
-	name = lion-man
-	email = amanattou44@gmail.com
+	name = lion
+	email = lion44man@gmail.com
 [alias]
 	i = init
 	cl = clone
@@ -26,5 +26,9 @@
 	branch = auto
 	diff = auto
 	grep = auto
+[pager]
+  log = diff-highlight | less
+  show = diff-highlight | less
+  diff = diff-highlight | less
 [core]
 	editor = vim
