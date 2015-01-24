@@ -18,7 +18,8 @@ alias py="python"
 
 alias b="bundle"
 alias be="b exec"
-alias ber="be rake"
+alias bes="be spring"
+alias besr="bes rake"
 
 alias e="express"
 
@@ -31,3 +32,6 @@ alias pybrew="pythonbrew"
 
 # tmux command
 alias tmuxn="tmux new-session \; source-file ~/.tmux/session"
+
+# brew コマンドを使用する時だけPATHからopt/ImageMagick/binを抜く
+alias brew="env PATH=${PATH/\/opt\/ImageMagick\/bin:/} brew"
