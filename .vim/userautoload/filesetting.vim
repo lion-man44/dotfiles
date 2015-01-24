@@ -16,15 +16,16 @@ if has("autocmd")
   autocmd BufNewFile,BufRead *.ejs setlocal ft=html
   autocmd BufNewFile,BufRead *.py setlocal ft=python
   autocmd BufNewFile,BufRead *.rb setlocal ft=ruby
+  autocmd BufNewFile,BufRead Gemfile setlocal ft=ruby
   autocmd BufNewFile,BufRead *.coffee setlocal ft=coffee
   autocmd BufNewFile,BufRead *.ts setlocal ft=typescript
+  autocmd BufNewFile,BufRead *.md setlocal ft=markdown
+  autocmd BufNewFile,BufRead *.jade setlocal ft=markdown
+  autocmd BufNewFile,BufRead *.gyp setlocal ft=json
+  autocmd BufNewFile,BufRead *.cson setlocal ft=json
 
-  " コマンド関係
-  " シンタックスチェック
-  autocmd FileType python map <buffer> <C-s> :call Autopep8()<CR>
+  " ctagsファイルの設定ファイル
+  autocmd BufNewFile,BufRead *.rb set tags+=;$HOME/.ruby.ctags;
+  autocmd BufNewFile,BufRead *.js set tags+=;$HOME/.javascript.ctags;
 
-  " 書き込み時処理
-  " コンパイルする
-  autocmd BufWritePost *.coffee silent make! -bc
-  nnoremap <silent> <C-c> :CoffeeCompile vert <CR><C-w>h
 endif

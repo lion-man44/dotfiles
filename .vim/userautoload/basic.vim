@@ -1,6 +1,6 @@
 " 基本設定
 " カラー機能
-"colorscheme molokai
+colorscheme molokai
 syntax on
 " .swpファイルを作成しない
 set noswapfile
@@ -74,6 +74,8 @@ set sw=2
 set showcmd
 " vimコマンドラインの補完候補を表示
 set wildmenu
+" 補完のスタイル
+set wildmode=list:full
 " ステータスラインを2行
 set laststatus=2
 "set statusline=%<%f\ #%n%m%r%h%w%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}%y%=%l,%c%V%8P
@@ -84,3 +86,6 @@ set hlsearch
 " バックスラッシュ・クエスチョンを自動的にエスケープ
 "cnoremap <expr> / getcmdtype() == '/' ? '\/' : '/'
 "cnoremap <expr> ? getcmdtype() == '?' ? '\?' : '?'
+
+" ヤンクの行数を増やす
+set viminfo='20,\"5000

@@ -27,55 +27,32 @@ else
   " CoffeeScriptのsyntax
   NeoBundle 'kchmck/vim-coffee-script'
 
-  " TweetVimとその依存関係のプラグイン
-  NeoBundle 'basyura/TweetVim'
-  NeoBundle 'basyura/twibill.vim'
-  NeoBundle 'basyura/bitly.vim'
-  " webapiが詰め込まれたvim
-  NeoBundle 'mattn/webapi-vim'
-  " ふぁぼ
-  NeoBundle 'mattn/favstar-vim'
-  " vimからブラウザを開くプラグイン
-  NeoBundle 'tyru/open-browser.vim'
   " アウトライン表示
   NeoBundle 'Shougo/unite-outline'
   " ファイラー
   NeoBundle 'Shougo/unite.vim'
 
-  " フィルター機能
-  NeoBundle 'rhysd/tweetvim-advanced-filter'
   " JSONカラーリング
   NeoBundle 'elzr/vim-json'
-  " 環境させ入っていれば、勝手にチェックを走らせてくれるプラグイン
-  NeoBundle 'scrooloose/syntastic'
-  " webブラウザ
-  NeoBundle 'yuratomo/w3m.vim'
   " css3のsyntax
   NeoBundle 'hail2u/vim-css3-syntax'
-  " sass,scssのcompile
-  NeoBundle 'AtsushiM/sass-compile.vim'
   " html5のindentとsyntaxを追加
   NeoBundle 'taichouchou2/html5.vim'
-
-  " pythonのシンタックスチェッカー
-  NeoBundle 'tell-k/vim-autopep8'
-
-  " neocomplcacheを更に賢くオムニ補完してくれる
-  NeoBundle 'marijnh/tern_for_vim', {
-        \ 'build': {
-        \   'others': 'npm install'
-        \ }}
-  " omni補完のnode.jsバージョン
-  NeoBundle 'myhere/vim-nodejs-complete'
 
   " ctagsの結果をアウトラインして表示する
   NeoBundle 'vim-scripts/taglist.vim'
 
-  " F#用のsyntax
-  NeoBundle 'kongo2002/fsharp-vim'
+  " あのファイルの曖昧検索
+  NeoBundle 'kana/vim-altr'
 
-  " 英語から日本語翻訳
-  NeoBundle 'mattn/googletranslate-vim'
+  " slimのsyntax
+  NeoBundle 'slim-template/vim-slim'
+
+  " rails使いの定番
+  NeoBundle 'tpope/vim-rails'
+
+  " railsでRTreeをするとプロジェクトツリーを表示してくれる
+  NeoBundle 'scrooloose/nerdtree'
 
   " インストールされていないプラグインのチェック
   NeoBundleCheck

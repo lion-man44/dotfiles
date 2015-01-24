@@ -1,6 +1,5 @@
 " insertモードから抜ける
-inoremap <silent> jj <Esc>
-" visualモードから抜ける
+inoremap <silent> jj <Esc> " visualモードから抜ける
 vnoremap <silent> q <Esc>
 
 " Esc2回でハイライトを消す
@@ -21,3 +20,6 @@ command!
 \ -nargs=* -complete=mapping
 \ AllMaps
 \ map <args> | map! <args> | lmap <args>
+
+" ctagsで複数候補のある時は一覧で表示
+nnoremap <C-]> g<C-]>
