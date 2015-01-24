@@ -1,0 +1,17 @@
+*~
+*.swp
+*.bak
+*.old
+tmp
+old
+.vim/bundle
+.vim/userautoload
+.git
+.svn
+zsh-completions
+bower_components
+node_modules
+gems
+*.zip
+*.lha
+*.dmg
