@@ -43,6 +43,12 @@ if exists('&ambiwidth')
 endif
 " デフォルト不過視文字は美しくないので美しく
 set listchars=tab:»-,trail:-,extends:»,precedes:«,nbsp:%,eol:↲
+" デフォルトで空白文字をハイライトする
+augroup HighlightTrailingSpaces
+  autocmd!
+  autocmd VimEnter,WinEnter,ColorScheme * highlight TrailingSpaces term=underline guibg=Red ctermbg=Red
+  autocmd VimEnter,WinEnter * match TrailingSpaces /\s\+$/
+augroup END
 
 
 " ファイル関係
@@ -58,6 +64,8 @@ let &t_EI.="\e]50;CursorShape=0\x7"
 "let &t_te.="\e]0 q"
 " カーソルを行頭、行末で止まらないようにする
 set whichwrap=b,s,h,l,<,>,[,]
+" バックスペースで削除できるものを定義
+set backspace=indent,eol,start
 
 
 " 基本タブ設定
