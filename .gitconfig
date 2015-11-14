@@ -9,7 +9,8 @@
 	b = branch
 	ba = branch -a
 	f = fetch
-	df = diff
+  df = diff
+  dfc = diff --cached
 	g = grep
 	remo = remote -v
 	sh = show

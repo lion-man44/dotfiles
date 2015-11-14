@@ -58,6 +58,10 @@ NeoBundle 'scrooloose/nerdtree'
 " ctags
 NeoBundle 'szw/vim-tags'
 
+" rubyのif...endやJSの{}等のキーワードを自動補完する
+NeoBundle 'kana/vim-smartinput'
+NeoBundle 'cohama/vim-smartinput-endwise'
+
 call neobundle#end()
 filetype plugin indent on
 
