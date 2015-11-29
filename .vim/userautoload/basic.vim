@@ -97,3 +97,8 @@ set hlsearch
 
 " ヤンクの行数を増やす
 set viminfo='20,\"5000
+
+" matchit.vimの導入
+source /usr/local/Cellar/vim/7.4.898/share/vim/vim74/macros/matchit.vim
+source /usr/local/Cellar/vim/7.4.898/share/vim/vim74/autoload/htmlcomplete.vim
+let b:match_words = '<:>,<div.*>:</div>'
