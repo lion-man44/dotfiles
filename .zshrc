@@ -161,3 +161,13 @@ function peco-select-history() {
 }
 zle -N peco-select-history
 bindkey '^r' peco-select-history
+
+# homebrew editor
+export HOMEBREW_EDITOR='vim'
+
+# zsh auto suggestions
+source ~/.zsh/zsh-autosuggestions/autosuggestions.zsh
+zle-line-init() {
+  zle autosuggest-start
+}
+zle -N zle-line-init
