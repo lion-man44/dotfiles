@@ -165,3 +165,13 @@ bindkey '^r' peco-select-history
 ## zsh no matches found alertを切る
 ## http://shirusu-ni-tarazu.hatenablog.jp/entry/2013/01/18/034233
 setopt nonomatch
+
+# homebrew editor
+export HOMEBREW_EDITOR='vim'
+
+# zsh auto suggestions
+source ~/.zsh/zsh-autosuggestions/autosuggestions.zsh
+zle-line-init() {
+  zle autosuggest-start
+}
+zle -N zle-line-init
