@@ -161,3 +161,7 @@ function peco-select-history() {
 }
 zle -N peco-select-history
 bindkey '^r' peco-select-history
+
+## zsh no matches found alertを切る
+## http://shirusu-ni-tarazu.hatenablog.jp/entry/2013/01/18/034233
+setopt nonomatch
