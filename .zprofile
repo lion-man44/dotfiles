@@ -3,7 +3,7 @@
 export PATH=/usr/local/bin:$PATH
 
 ## 環境変数系
-# 
+#
 [[ -s "$HOME/dotfiles/zenv" ]] && source "$HOME/dotfiles/zenv"
 
 ## rbenvのパス設定
@@ -68,3 +68,5 @@ export PATH=/Development/js_work/enforce/enforce/bin:$PATH
 
 # pkg-config
 export PKG_CONFIG_PATH=/opt/X11/lib/pkgconfig
+
+[ -f ~/.ztokens ] && . ~/.ztokens
