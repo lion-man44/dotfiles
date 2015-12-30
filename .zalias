@@ -38,3 +38,6 @@ alias brew="env PATH=${PATH/\/opt\/ImageMagick\/bin:/} brew"
 
 # ctagsのmac用コマンド
 alias ctags="`brew --prefix`/bin/ctags"
+
+# 画像のプレビュー機能
+alias ql='qlmanage -p "$@" >& /dev/null'

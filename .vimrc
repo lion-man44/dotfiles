@@ -65,6 +65,12 @@ NeoBundle 'cohama/vim-smartinput-endwise'
 " Vim plugin を作成するためのユーティリティー関数群
 NeoBundle 'vim-jp/vital.vim'
 
+" pasteする時に自動で :set nopaste and :set noindent などをしてくれる
+NeoBundle 'ConradIrwin/vim-bracketed-paste'
+
+" vimgrepなどをagコマンドでやる
+NeoBundle 'rking/ag.vim'
+
 call neobundle#end()
 filetype plugin indent on
 
