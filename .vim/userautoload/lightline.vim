@@ -4,10 +4,6 @@ if !has('gui_running')
 endif
 " laststatusのカラースキーマ
 let g:lightline = {
-      \ 'colorscheme': 'solarized',
-      \ 'component': {
-      \  'hello': 'hello, world'
-      \ },
       \ 'separator': { 'left': '⮀', 'right': '⮂'},
       \ 'subseparator': { 'left': '⮁', 'right': '⮃' }
       \ }
