@@ -26,9 +26,13 @@ export NODEBREW_ROOT=$HOME/.nodebrew
 export PGDATA=/usr/local/var/postgres
 
 ## pythonのバージョン管理ツールの設定ファイル読み込み
-# 
-#export PATH=$PATH:/usr/local/opt/pyenv/bin
-[[ -s "$HOME/.pythonbrew/etc/bashrc" ]] && source "$HOME/.pythonbrew/etc/bashrc"
+#
+export PYENV_ROOT=$HOME/.pyenv
+if [ -d $PYENV_ROOT ]; then
+  export PATH=$PYENV_ROOT/bin:$PATH
+  eval "$(pyenv init -)"
+  eval "$(pyenv virtualenv-init -)"
+fi
 
 ## perlのバージョン管理ツール、plenvのPATH通し
 #
@@ -62,9 +66,6 @@ export JAVA_HOME=`/usr/libexec/java_home`
 
 # python path
 export PYTHONPATH=/usr/local/lib/python2.7/site-packages
-
-# enforce path
-export PATH=/Development/js_work/enforce/enforce/bin:$PATH
 
 # pkg-config
 export PKG_CONFIG_PATH=/opt/X11/lib/pkgconfig
