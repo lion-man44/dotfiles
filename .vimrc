@@ -71,6 +71,9 @@ NeoBundle 'ConradIrwin/vim-bracketed-paste'
 " vimgrepなどをagコマンドでやる
 NeoBundle 'rking/ag.vim'
 
+" 最高に最高なインクリメンタルサーチ
+NeoBundle 'haya14busa/incsearch.vim'
+
 call neobundle#end()
 filetype plugin indent on
 
