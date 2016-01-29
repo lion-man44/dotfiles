@@ -1,4 +1,3 @@
-" Note: Skip initialization for vim-tiny or vim-small.
 if 0 | endif
 
 if has('vim_starting')
@@ -6,12 +5,10 @@ if has('vim_starting')
     set nocompatible
   endif
 
-  " Required:
   set runtimepath+=~/.vim/bundle/neobundle.vim/
+  " プラグイン管理(NeoBundle)
+  call neobundle#begin(expand('~/.vim/bundle/'))
 endif
-
-" プラグイン管理(NeoBundle)
-call neobundle#begin(expand('~/.vim/bundle/'))
 
 " Neobundle自身をNeobundle管理下におく
 NeoBundleFetch 'Shougo/neobundle.vim'
@@ -24,9 +21,6 @@ NeoBundle 'Shougo/neocomplcache.vim'
 NeoBundle 'mattn/emmet-vim'
 " 味気ないlaststatusをかっこ良くしてくれる現在の人気
 NeoBundle 'itchyny/lightline.vim', {'type': 'nosync'}
-
-" CoffeeScriptのsyntax
-NeoBundle 'kchmck/vim-coffee-script'
 
 " JSONカラーリング
 NeoBundle 'elzr/vim-json'
@@ -53,13 +47,6 @@ NeoBundle 'scrooloose/nerdtree'
 " ctags
 NeoBundle 'szw/vim-tags'
 
-" rubyのif...endやJSの{}等のキーワードを自動補完する
-NeoBundle 'kana/vim-smartinput'
-NeoBundle 'cohama/vim-smartinput-endwise'
-
-" Vim plugin を作成するためのユーティリティー関数群
-NeoBundle 'vim-jp/vital.vim'
-
 " pasteする時に自動で :set nopaste and :set noindent などをしてくれる
 NeoBundle 'ConradIrwin/vim-bracketed-paste'
 
@@ -68,6 +55,9 @@ NeoBundle 'rking/ag.vim'
 
 " 最高に最高なインクリメンタルサーチ
 NeoBundle 'haya14busa/incsearch.vim'
+
+" vimにカラー表示をしてくれる #f32 とか
+NeoBundle 'lilydjwg/colorizer'
 
 call neobundle#end()
 filetype plugin indent on
@@ -251,6 +241,10 @@ command!
 " ctagsで複数候補のある時は一覧で表示
 nnoremap <C-]> g<C-]>
 
+" 前/後のファイルに移動
+noremap <silent> bp :bprevious<CR>
+noremap <silent> bn :bnext<CR>
+
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -347,7 +341,7 @@ map g/ <Plug>(incsearch-stay)
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" smartinput設定
+" nerdtree設定
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" これによってJSの{}, rubyのdef...endに対応させている
-call smartinput_endwise#define_default_rules()
+nnoremap <silent><C-e> :NERDTreeToggle<CR>
+
