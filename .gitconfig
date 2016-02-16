@@ -3,7 +3,6 @@
 	email = lion44man@gmail.com
 [alias]
 	i = init
-	cl = clone
 	conf = config
 	s = status
 	b = branch
@@ -15,6 +14,8 @@
 	remo = remote -v
 	sh = show
 	so = remote s origin
+  st = stash
+  stl = stash list
 	ad = add
 	ci = commit
 	co = checkout
@@ -33,3 +34,5 @@
   diff = diff-highlight | less
 [core]
 	editor = vim
+[merge]
+	tool = vimdiff

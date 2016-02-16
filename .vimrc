@@ -59,6 +59,12 @@ NeoBundle 'haya14busa/incsearch.vim'
 " vimにカラー表示をしてくれる #f32 とか
 NeoBundle 'lilydjwg/colorizer'
 
+" coffescript syntax
+NeoBundle 'kchmck/vim-coffee-script'
+
+" color schema
+NeoBundle 'jyota/vimColors'
+
 call neobundle#end()
 filetype plugin indent on
 
@@ -245,6 +251,8 @@ nnoremap <C-]> g<C-]>
 noremap <silent> bp :bprevious<CR>
 noremap <silent> bn :bnext<CR>
 
+" sの無効化
+nnoremap s <Nop>
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -344,4 +352,4 @@ map g/ <Plug>(incsearch-stay)
 " nerdtree設定
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 nnoremap <silent><C-e> :NERDTreeToggle<CR>
-
+let NERDTreeWinSize=25
