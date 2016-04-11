@@ -1,75 +1,83 @@
-if 0 | endif
-
-if has('vim_starting')
-  if &compatible
-    set nocompatible
-  endif
-
-  set runtimepath+=~/.vim/bundle/neobundle.vim/
-  " プラグイン管理(NeoBundle)
-  call neobundle#begin(expand('~/.vim/bundle/'))
+"dein Scripts-----------------------------
+if &compatible
+  set nocompatible
 endif
 
-" Neobundle自身をNeobundle管理下におく
-NeoBundleFetch 'Shougo/neobundle.vim'
+" Required:
+set runtimepath^=/Users/orange-lion/.vim/bundle/repos/github.com/Shougo/dein.vim
+
+" Required:
+call dein#begin(expand('/Users/orange-lion/.vim/bundle'))
+
+" Let dein manage dein
+" Required:
+call dein#add('Shougo/dein.vim')
 
 " JSのsyntax
-NeoBundle 'jelera/vim-javascript-syntax'
+call dein#add('jelera/vim-javascript-syntax')
+
 " vim上で行う言語等のコマンド補完
-NeoBundle 'Shougo/neocomplcache.vim'
+call dein#add('Shougo/neocomplcache.vim')
 " 現在のzen-coding
-NeoBundle 'mattn/emmet-vim'
+call dein#add('mattn/emmet-vim')
 " 味気ないlaststatusをかっこ良くしてくれる現在の人気
-NeoBundle 'itchyny/lightline.vim', {'type': 'nosync'}
+call dein#add('itchyny/lightline.vim')
 
 " JSONカラーリング
-NeoBundle 'elzr/vim-json'
+call dein#add('elzr/vim-json')
 " css3のsyntax
-NeoBundle 'hail2u/vim-css3-syntax'
+call dein#add('hail2u/vim-css3-syntax')
 " html5のindentとsyntaxを追加
-NeoBundle 'taichouchou2/html5.vim'
+call dein#add('taichouchou2/html5.vim')
 
 " ctagsの結果をアウトラインして表示する
-NeoBundle 'vim-scripts/taglist.vim'
+call dein#add('vim-scripts/taglist.vim')
 
 " slimのsyntax
-NeoBundle 'slim-template/vim-slim'
+call dein#add('slim-template/vim-slim')
 
 " rails使いの定番
-NeoBundle 'tpope/vim-rails'
+call dein#add('tpope/vim-rails')
 
 " 高速ファイラー
-NeoBundle 'kien/ctrlp.vim'
+call dein#add('kien/ctrlp.vim')
 
 " railsでRTreeをするとプロジェクトツリーを表示してくれる
-NeoBundle 'scrooloose/nerdtree'
+call dein#add('scrooloose/nerdtree')
 
 " ctags
-NeoBundle 'szw/vim-tags'
+call dein#add('szw/vim-tags')
 
 " pasteする時に自動で :set nopaste and :set noindent などをしてくれる
-NeoBundle 'ConradIrwin/vim-bracketed-paste'
+call dein#add('ConradIrwin/vim-bracketed-paste')
 
 " vimgrepなどをagコマンドでやる
-NeoBundle 'rking/ag.vim'
+call dein#add('rking/ag.vim')
 
 " 最高に最高なインクリメンタルサーチ
-NeoBundle 'haya14busa/incsearch.vim'
+call dein#add('haya14busa/incsearch.vim')
 
 " vimにカラー表示をしてくれる #f32 とか
-NeoBundle 'lilydjwg/colorizer'
+call dein#add('lilydjwg/colorizer')
 
 " coffescript syntax
-NeoBundle 'kchmck/vim-coffee-script'
+call dein#add('kchmck/vim-coffee-script')
 
 " color schema
-NeoBundle 'jyota/vimColors'
+call dein#add('jyota/vimColors')
 
-call neobundle#end()
+" Required:
+call dein#end()
+
+" Required:
 filetype plugin indent on
 
-" インストールされていないプラグインのチェック
-NeoBundleCheck
+" If you want to install not installed plugins on startup.
+if dein#check_install()
+  call dein#install()
+endif
+
+"End dein Scripts-------------------------
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
