@@ -36,6 +36,9 @@ call dein#add('vim-scripts/taglist.vim')
 " slimのsyntax
 call dein#add('slim-template/vim-slim')
 
+" jadeのsyntax
+call dein#add('digitaltoad/vim-pug')
+
 " rails使いの定番
 call dein#add('tpope/vim-rails')
 
@@ -65,6 +68,9 @@ call dein#add('kchmck/vim-coffee-script')
 
 " color schema
 call dein#add('jyota/vimColors')
+
+" typescript syntax highlight
+call dein#add('leafgarland/typescript-vim')
 
 " Required:
 call dein#end()
@@ -200,8 +206,8 @@ if has("autocmd")
   " ファイル種別による個別設定(初期設定ではexpandtabなのでその設定はいれない)
   " ts = tabstop, sts = softtabstop, sw = shiftwidth, tw = textwidth
   " ft = filetype
-  autocmd FileType html,xhtml,css,javascript,yaml,ruby,coffee setlocal ts=2 sts=2 sw=2
-  autocmd FileType python     setlocal ts=4 sts=4 sw=4
+  autocmd FileType html,xhtml,css,yaml,ruby,javascript,coffee setlocal ts=2 sts=2 sw=2
+  autocmd FileType python,typescript setlocal ts=4 sts=4 sw=4
 
   " ファイルを開いた時、読み込んだ時にファイルタイプを設定する
   autocmd BufNewFile,BufRead *.js setlocal ft=javascript
@@ -212,11 +218,13 @@ if has("autocmd")
   autocmd BufNewFile,BufRead *.coffee setlocal ft=coffee
   autocmd BufNewFile,BufRead *.ts setlocal ft=typescript
   autocmd BufNewFile,BufRead *.md setlocal ft=markdown
-  autocmd BufNewFile,BufRead *.jade setlocal ft=markdown
+  autocmd BufNewFile,BufRead *.jade setlocal ft=pug
   autocmd BufNewFile,BufRead *.gyp setlocal ft=json
   autocmd BufNewFile,BufRead *.cson setlocal ft=json
   autocmd BufNewFile,BufRead *.yml setlocal ft=yaml
   autocmd BufNewFile,BufRead *.yaml setlocal ft=yaml
+  autocmd BufNewFile,BufRead *.php setlocal ft=php
+	autocmd BufNewFile,BufRead *.ts setlocal ft=typescript
 
   " ctagsファイルの設定ファイル
   autocmd BufNewFile,BufRead *.rb set tags+=;$HOME/.ruby.ctags;

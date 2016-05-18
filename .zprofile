@@ -1,6 +1,7 @@
 ## 環境変数PATHへのコマンドパスの追加
 #
 export PATH=/usr/local/bin:$PATH
+export PATH=/usr/local/sbin:$PATH
 
 ## 環境変数系
 #
@@ -14,7 +15,7 @@ eval "$(rbenv init -)"
 
 ## gem path
 #
-export PATH=$HOME/.gem/ruby/2.1.0/bin:$HOME/.gem/ruby/2.2.0/bin:$PATH
+export PATH=$HOME/.gem/ruby/2.3.0/bin:$HOME/.gem/ruby/2.2.0/bin:$PATH
 
 ## node.jsのバージョン管理ツール、npmの読み込み
 #
@@ -69,5 +70,9 @@ export PYTHONPATH=/usr/local/lib/python2.7/site-packages
 
 # pkg-config
 export PKG_CONFIG_PATH=/opt/X11/lib/pkgconfig
+
+# Haskell用のバージョン管理ツールstackのPATH
+# http://docs.haskellstack.org/en/stable/install_and_upgrade/#mac-os-x
+export PATH=$HOME/.local/bin:$PATH
 
 [ -f ~/.ztokens ] && . ~/.ztokens

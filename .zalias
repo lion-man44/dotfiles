@@ -41,3 +41,6 @@ alias ctags="`brew --prefix`/bin/ctags"
 
 # 画像のプレビュー機能
 alias ql='qlmanage -p "$@" >& /dev/null'
+
+# pyenvのconfig warningを出さないようにするための設定
+alias brew='env PATH=${PATH/\/Users\/tasukujp\/\.pyenv\/shims:/} brew'
