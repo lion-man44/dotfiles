@@ -175,3 +175,8 @@ zle-line-init() {
   zle autosuggest-start
 }
 zle -N zle-line-init
+
+# Rust and cargo read PATH for rustup
+source ~/.cargo/env
+fpath+=~/dotfiles/.zfunc/rustup
+export RUST_BACKTRACE=1

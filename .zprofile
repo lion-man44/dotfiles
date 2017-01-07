@@ -7,11 +7,21 @@ export PATH=/usr/local/sbin:$PATH
 #
 [[ -s "$HOME/dotfiles/zenv" ]] && source "$HOME/dotfiles/zenv"
 
+## Homebrew Caskroomのパス設定
+#
+export HOMEBREW_CASK_OPTS="--appdir=/Applications --caskroom=/opt/homebrew-cask/Caskroom"
+
 ## rbenvのパス設定
 #
 export RUBY_CONFIGURE_OPTS="--with-openssl-dir=`brew --prefix openssl` --with-readline-dir=`brew --prefix readline`"
 export PATH=$HOME/.rbenv/bin:$PATH
 eval "$(rbenv init -)"
+
+## exenvのパス設定
+#
+export EXENV_ROOT=/usr/local/Cellar/exenv
+export PATH=$HOME/.exenv/bin:$PATH
+if which exenv > /dev/null; then eval "$(exenv init -)"; fi
 
 ## gem path
 #
@@ -74,5 +84,9 @@ export PKG_CONFIG_PATH=/opt/X11/lib/pkgconfig
 # Haskell用のバージョン管理ツールstackのPATH
 # http://docs.haskellstack.org/en/stable/install_and_upgrade/#mac-os-x
 export PATH=$HOME/.local/bin:$PATH
+
+# Go path
+export GOPATH=$HOME/Developments/go
+export PATH=$HOME/Developments/go/bin:$PATH
 
 [ -f ~/.ztokens ] && . ~/.ztokens

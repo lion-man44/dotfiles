@@ -36,3 +36,5 @@
 	editor = vim
 [merge]
 	tool = vimdiff
+[commit]
+  template = ~/dotfiles/.git_commit_template

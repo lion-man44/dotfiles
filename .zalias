@@ -1,46 +1,51 @@
-## Unix like command
-alias ll="ls -ltr"
-alias la="ls -a"
-alias ls="ls -G"
+# ft=unix comment for Vim
+alias ll='ls -l'
+alias la='ls -a'
+alias ls='ls -G'
+alias lla='ls -la'
+alias lal='ls -al'
+alias rm='rm -v'
+# カレンダーの現在日付のカラー
+# alias cal="/usr/bin/cal | grep -C6 '`date +' %-d '`'  "
 
-alias vi="vim"
-alias hist="history -i"
-alias mkdir="mkdir -p"
+alias vi='vim'
+alias hist='history -i'
+alias mkdir='mkdir -p'
 
-alias grep="grep --color"
-alias diff="colordiff"
+alias grep='grep --color'
+alias diff='colordiff'
 
 ## User command
-alias g="git"
+alias g='git'
 
-alias r="ruby"
-alias py="python"
+alias r='ruby'
+alias py='python'
 
-alias b="bundle"
-alias be="b exec"
-alias bes="be spring"
-alias besr="bes rake"
+alias b='bundle'
+alias be='b exec'
+alias bes='be spring'
+alias besr='bes rake'
 
-alias e="express"
+alias e='express'
 
-alias rs="redscript"
-alias cs="coffee"
+alias gist='gist -o'
 
-alias gist="gist -o"
-
-alias pybrew="pythonbrew"
+alias pybrew='pythonbrew'
 
 # tmux command
-alias tmuxn="tmux new-session \; source-file ~/.tmux/session"
+alias tmuxn='tmux new-session \; source-file ~/.tmux/session'
 
 # brew コマンドを使用する時だけPATHからopt/ImageMagick/binを抜く
-alias brew="env PATH=${PATH/\/opt\/ImageMagick\/bin:/} brew"
+alias brew='env PATH=${PATH/\/opt\/ImageMagick\/bin:/} brew'
 
 # ctagsのmac用コマンド
-alias ctags="`brew --prefix`/bin/ctags"
+alias ctags='`brew --prefix`/bin/ctags'
 
 # 画像のプレビュー機能
 alias ql='qlmanage -p "$@" >& /dev/null'
 
 # pyenvのconfig warningを出さないようにするための設定
-alias brew='env PATH=${PATH/\/Users\/tasukujp\/\.pyenv\/shims:/} brew'
+alias brew='env PATH=${PATH/${HOME}\/\.pyenv\/shims:/} brew'
+
+# Shellのカラーコード
+alias shell-color-all='for fore in `seq 30 37`; do echo -e "\e[${fore}m \\\e[${fore}m \e[m"; for mode in 1 4 5; do; echo -en "\e[${fore};${mode}m \\\e[${fore};${mode}m \e[m"; for back in `seq 40 47`; do echo -en "\e[${fore};${back};${mode}m \\\e[${fore};${back};${mode}m \e[m"; done; echo; done; echo; done; echo " \\\e[m"'

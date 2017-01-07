@@ -12,7 +12,6 @@ call dein#begin(expand('/Users/orange-lion/.vim/bundle'))
 " Let dein manage dein
 " Required:
 call dein#add('Shougo/dein.vim')
-
 " JSのsyntax
 call dein#add('jelera/vim-javascript-syntax')
 
@@ -36,23 +35,14 @@ call dein#add('vim-scripts/taglist.vim')
 " slimのsyntax
 call dein#add('slim-template/vim-slim')
 
-" jadeのsyntax
-call dein#add('digitaltoad/vim-pug')
-
 " rails使いの定番
 call dein#add('tpope/vim-rails')
 
 " 高速ファイラー
 call dein#add('kien/ctrlp.vim')
 
-" railsでRTreeをするとプロジェクトツリーを表示してくれる
-call dein#add('scrooloose/nerdtree')
-
 " ctags
 call dein#add('szw/vim-tags')
-
-" pasteする時に自動で :set nopaste and :set noindent などをしてくれる
-call dein#add('ConradIrwin/vim-bracketed-paste')
 
 " vimgrepなどをagコマンドでやる
 call dein#add('rking/ag.vim')
@@ -69,8 +59,18 @@ call dein#add('kchmck/vim-coffee-script')
 " color schema
 call dein#add('jyota/vimColors')
 
-" typescript syntax highlight
-call dein#add('leafgarland/typescript-vim')
+" Rust programing syntax
+call dein#add('rust-lang/rust.vim')
+call dein#add('mattn/webapi-vim')
+
+" rust completion
+call dein#add('racer-rust/vim-racer')
+
+" vim support for Dart
+call dein#add('dart-lang/dart-vim-plugin')
+
+" highlight for vue
+call dein#add('posva/vim-vue')
 
 " Required:
 call dein#end()
@@ -157,7 +157,6 @@ set whichwrap=b,s,h,l,<,>,[,]
 " バックスペースで削除できるものを定義
 set backspace=indent,eol,start
 
-
 " 基本タブ設定
 " タブをスペースに変換
 set expandtab
@@ -189,8 +188,8 @@ set hlsearch
 set viminfo='20,\"5000
 
 " matchit.vimの導入
-source /usr/local/Cellar/vim/**/share/vim/vim74/macros/matchit.vim
-source /usr/local/Cellar/vim/**/share/vim/vim74/autoload/htmlcomplete.vim
+source /usr/local/Cellar/vim/**/share/vim/**/macros/matchit.vim
+source /usr/local/Cellar/vim/**/share/vim/**/autoload/htmlcomplete.vim
 let b:match_words = '<:>,<div.*>:</div>'
 
 
@@ -211,6 +210,7 @@ if has("autocmd")
 
   " ファイルを開いた時、読み込んだ時にファイルタイプを設定する
   autocmd BufNewFile,BufRead *.js setlocal ft=javascript
+  autocmd BufNewFile,BufRead *.es6 setlocal ft=javascript
   autocmd BufNewFile,BufRead *.ejs setlocal ft=html
   autocmd BufNewFile,BufRead *.py setlocal ft=python
   autocmd BufNewFile,BufRead *.rb setlocal ft=ruby
@@ -224,7 +224,9 @@ if has("autocmd")
   autocmd BufNewFile,BufRead *.yml setlocal ft=yaml
   autocmd BufNewFile,BufRead *.yaml setlocal ft=yaml
   autocmd BufNewFile,BufRead *.php setlocal ft=php
-	autocmd BufNewFile,BufRead *.ts setlocal ft=typescript
+  autocmd BufNewFile,BufRead *.ts setlocal ft=typescript
+  autocmd BufNewFile,BufRead *.rs setlocal ft=rust
+  autocmd BufNewFile,BufRead *.dart setlocal ft=dart
 
   " ctagsファイルの設定ファイル
   autocmd BufNewFile,BufRead *.rb set tags+=;$HOME/.ruby.ctags;
@@ -270,6 +272,57 @@ noremap <silent> bn :bnext<CR>
 " sの無効化
 nnoremap s <Nop>
 
+" 検索のescapeを簡略化
+nnoremap / /\v
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" dein.vim設定
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" DeinClean command
+command! -bang DeinClean call s:dein_clean(<bang>0)
+
+function! s:dein_clean(force) abort "{{{
+  let del_all = a:force
+  for p in dein#check_clean()
+    if !del_all
+      let answer = s:input(printf('Delete %s ? [y/N/a]', fnamemodify(p, ':~')))
+
+      if type(answer) is type(0) && answer <= 0
+        " Cancel (Esc or <C-c>)
+        break
+      endif
+
+      if answer !~? '^\(y\%[es]\|a\%[ll]\)$'
+        continue
+      endif
+
+      if answer =~? '^a\%[ll]$'
+        let del_all = 1
+      endif
+    endif
+
+    " Delete plugin dir
+    call dein#install#_rm(p)
+  endfor
+endfunction "}}}
+
+function! s:input(...) abort "{{{
+  new
+  cnoremap <buffer> <Esc> __CANCELED__<CR>
+  try
+    let input = call('input', a:000)
+    let input = input =~# '__CANCELED__$' ? 0 : input
+  catch /^Vim:Interrupt$/
+    let input = -1
+  finally
+    bwipeout!
+    return input
+  endtry
+endfunction "}}}
+
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " lightline設定
@@ -309,8 +362,6 @@ let g:neocomplcache_enable_underbar_completion = 1
 " キャメルケースの補完を有効化
 let g:neocomplcache_enable_camel_case_completion = 1
 
-" <BS>を押下時に確実にポップアップを削除
-inoremap <expr><BS> neocomplcache#smart_close_popup() . "\<BS>"
 " 現在選択している候補をキャンセルし、確実にポップアップを削除
 inoremap <expr><C-e> neocomplcache#cancel_popup() . "\<C-e>"
 " 現在選択している候補を確実に確定する
@@ -365,7 +416,10 @@ map g/ <Plug>(incsearch-stay)
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" nerdtree設定
+" racer設定
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-nnoremap <silent><C-e> :NERDTreeToggle<CR>
-let NERDTreeWinSize=25
+set hidden
+let g:racer_cmd = '$HOME/.cargo/bin/racer'
+
+
+
