@@ -1,30 +1,44 @@
-# プロンプトが表示されるたびにプロンプト文字列を評価、置換する
+# プロンプトが表示されるたびにプロンプト文字列を評価、置換する {{{
+
 setopt prompt_subst
 
-## zshの補完定義ファイルの読み込み準備
-#
+# }}}
+
+setopt noflowcontrol
+# zshの補完定義ファイルの読み込み準備 {{{
+
 fpath=($(brew --prefix)/share/zsh/site-functions $fpath)
 
-## zshのalias読み込み
-#
+# }}}
+
+# zshのalias読み込み {{{
+
 [ -f ~/.zalias ] && . ~/.zalias
 
-## zshのcolor読み込み
-#
+# }}}
+
+# zshのcolor読み込み {{{
+
 [ -f ~/.zcolors ] && . ~/.zcolors
 
-## zshの基本的な補完機能
-#
+# }}}
+
+# zshの基本的な補完機能 {{{
+
 autoload -U compinit
 compinit
 
-## zshの基本的な塗装機能
-#
+# }}}
+
+# zshの基本的な塗装機能 {{{
+
 autoload -U colors
 colors
 
-## ターミナルのタイトル
-#
+# }}}
+
+# ターミナルのタイトル {{{
+
 case "${TERM}" in
 kterm*|xterm)
     precmd() {
@@ -33,12 +47,19 @@ kterm*|xterm)
     ;;
 esac
 
-# VCSの情報を取得するzshの便利関数 vcs_infoを使う
+# }}}
+
+# VCSの情報を取得するzshの便利関数 vcs_infoを使う {{{
+
 autoload -Uz vcs_info
+
+# }}}
 
 # 表示フォーマットの指定
 # %b ブランチ情報
 # %a アクション名(mergeなど)
+# {{{
+
 zstyle ':vcs_info:*' formats '[%b]'
 zstyle ':vcs_info:*' actionformats '[%b|%a]'
 precmd () {
@@ -54,48 +75,71 @@ node_version() {
     fi
 }
 
-## プロンプトの表示
-#
-# バージョン管理されているディレクトリにいれば表示，そうでなければ非表示
-#
-PROMPT='%{${fg[cyan]}%}%~%{${reset_color}%}
-[%n]%1(v|%F{green}%1v%f|)$ '
-# %nに戻す
+# }}}
 
-## cdの履歴機能
-#
+# プロンプトの表示
+# バージョン管理されているディレクトリにいれば表示，そうでなければ非表示
+# {{{
+
+PROMPT='%{${fg[cyan]}%}%~%{${reset_color}%}
+[%n]%1(v|%F{green}%1v%f|)$ ' # %nに戻す
+
+# }}}
+
+# cdの履歴機能
 # cd - <tab key> で歴史を辿れる
+# {{{
+
 setopt auto_pushd
 
-## beep音を殺す
-#
+# }}}
+
+# beep音を殺す {{{
+
 setopt nolistbeep
 setopt nobeep
 
-## コマンド履歴の保存数
-#
+# }}}
+
+# コマンド履歴の保存数 {{{
+
 HISTFILE=~/.zsh_history
 HISTSIZE=5000000
 SAVEHIST=5000000
-# 全シェルでコマンドを共有する
+
+# }}}
+
+# 全シェルでコマンドを共有する {{{
+
 setopt share_history
-# 補完時に履歴を自動的に展開する
+
+# }}}
+
+# 補完時に履歴を自動的に展開する {{{
+
 setopt hist_expand
 
-# less command color
+# }}}
+
+# less command color {{{
+
 export LESS='-R'
 export LESSOPEN='| /usr/local/bin/src-hilite-lesspipe.sh %s'
 
-# git command diff-highlight
+# }}}
+
+# git command diff-highlight {{{
+
 export PATH=/usr/local/share/git-core/contrib/diff-highlight:$PATH
 
-###-begin-npm-completion-###
-#
+# }}}
+
 # npm command completion script
 #
 # Installation: npm completion >> ~/.bashrc  (or ~/.zshrc)
 # Or, maybe: npm completion > /usr/local/etc/bash_completion.d/npm
 #
+# {{{
 
 COMP_WORDBREAKS=${COMP_WORDBREAKS/=/}
 COMP_WORDBREAKS=${COMP_WORDBREAKS/@/}
@@ -141,10 +185,16 @@ elif type compctl &>/dev/null; then
   }
   compctl -K _npm_completion npm
 fi
-###-end-npm-completion-###
 
-# gulp sub-command completion
+# }}}
+
+# gulp sub-command completion {{{
+
 eval "$(gulp --completion=zsh)"
+
+# }}}
+
+# history検索にpecoを使うかどうか {{{
 
 function peco-select-history() {
     local tac
@@ -162,21 +212,64 @@ function peco-select-history() {
 zle -N peco-select-history
 bindkey '^r' peco-select-history
 
-## zsh no matches found alertを切る
-## http://shirusu-ni-tarazu.hatenablog.jp/entry/2013/01/18/034233
+# }}}
+
+# zsh no matches found alertを切る
+# http://shirusu-ni-tarazu.hatenablog.jp/entry/2013/01/18/034233
+# {{{
+
 setopt nonomatch
 
-# homebrew editor
+# }}}
+
+# homebrew editor {{{
+
 export HOMEBREW_EDITOR='vim'
 
-# zsh auto suggestions
+# }}}
+
+# zsh auto suggestions {{{
+
 source ~/.zsh/zsh-autosuggestions/autosuggestions.zsh
 zle-line-init() {
   zle autosuggest-start
 }
 zle -N zle-line-init
 
-# Rust and cargo read PATH for rustup
+# }}}
+
+# Rust and cargo read PATH for rustup {{{
+
 source ~/.cargo/env
 fpath+=~/dotfiles/.zfunc/rustup
+fpath+=~/dotfiles/.zfunc/diesel
 export RUST_BACKTRACE=1
+export OPENSSL_INCLUDE_DIR=$(brew --prefix openssl)/include
+export DEP_OPENSSL_INCLUDE=$(brew --prefix openssl)/include
+
+# }}}
+
+# C-d でターミナルを閉じない {{{
+
+stty eof undef
+
+# }}}
+
+# gloogle cloud sdk {{{
+
+source /opt/homebrew-cask/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc
+source /opt/homebrew-cask/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc
+
+# }}}
+
+# pet command line snipet {{{
+
+function pet-select() {
+  BUFFER=$(pet search --query "$LBUFFER")
+  CURSOR=$#BUFFER
+  zle redisplay
+}
+zle -N pet-select
+bindkey '^s' pet-select
+
+# }}}
