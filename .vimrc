@@ -12,6 +12,13 @@ call dein#begin(expand('/Users/orange-lion/.vim/bundle'))
 " Let dein manage dein
 " Required:
 call dein#add('Shougo/dein.vim')
+
+" editorconfig
+call dein#add('editorconfig/editorconfig-vim')
+
+" tomlファイル syntax
+call dein#add('cespare/vim-toml')
+
 " JSのsyntax
 call dein#add('jelera/vim-javascript-syntax')
 
@@ -29,9 +36,6 @@ call dein#add('hail2u/vim-css3-syntax')
 " html5のindentとsyntaxを追加
 call dein#add('taichouchou2/html5.vim')
 
-" ctagsの結果をアウトラインして表示する
-call dein#add('vim-scripts/taglist.vim')
-
 " slimのsyntax
 call dein#add('slim-template/vim-slim')
 
@@ -40,9 +44,6 @@ call dein#add('tpope/vim-rails')
 
 " 高速ファイラー
 call dein#add('kien/ctrlp.vim')
-
-" ctags
-call dein#add('szw/vim-tags')
 
 " vimgrepなどをagコマンドでやる
 call dein#add('rking/ag.vim')
@@ -53,24 +54,25 @@ call dein#add('haya14busa/incsearch.vim')
 " vimにカラー表示をしてくれる #f32 とか
 call dein#add('lilydjwg/colorizer')
 
-" coffescript syntax
-call dein#add('kchmck/vim-coffee-script')
-
 " color schema
 call dein#add('jyota/vimColors')
 
 " Rust programing syntax
 call dein#add('rust-lang/rust.vim')
-call dein#add('mattn/webapi-vim')
 
 " rust completion
 call dein#add('racer-rust/vim-racer')
 
-" vim support for Dart
-call dein#add('dart-lang/dart-vim-plugin')
-
 " highlight for vue
 call dein#add('posva/vim-vue')
+
+" highlight for pug
+call dein#add('digitaltoad/vim-pug')
+
+" high performance for golang
+call dein#add('fatih/vim-go')
+
+call dein#add('yosssi/vim-ace')
 
 " Required:
 call dein#end()
@@ -139,6 +141,16 @@ augroup HighlightTrailingSpaces
   autocmd VimEnter,WinEnter,ColorScheme * highlight TrailingSpaces term=underline guibg=Red ctermbg=Red
   autocmd VimEnter,WinEnter * match TrailingSpaces /\s\+$/
 augroup END
+" バイナリ編集(xxd)モード（vim -b での起動、もしくは *.bin で発動します）
+augroup BinaryXXD
+  autocmd!
+  autocmd BufReadPre   *.bin let &binary =1
+  autocmd BufReadPost  * if &binary | silent %!xxd -g 1
+  autocmd BufReadPost  * set ft=xxd | endif
+  autocmd BufWritePre  * if &binary | %!xxd -r | endif
+  autocmd BufWritePost * if &binary | silent %!xxd -g 1
+  autocmd BufWritePost * set nomod | endif
+augroup END
 
 
 " ファイル関係
@@ -192,6 +204,8 @@ source /usr/local/Cellar/vim/**/share/vim/**/macros/matchit.vim
 source /usr/local/Cellar/vim/**/share/vim/**/autoload/htmlcomplete.vim
 let b:match_words = '<:>,<div.*>:</div>'
 
+" 前に開いたファイルのラインを記憶する
+autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal g`\"" | endif
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -212,13 +226,15 @@ if has("autocmd")
   autocmd BufNewFile,BufRead *.js setlocal ft=javascript
   autocmd BufNewFile,BufRead *.es6 setlocal ft=javascript
   autocmd BufNewFile,BufRead *.ejs setlocal ft=html
+  autocmd BufNewFile,BufRead *.tera setlocal ft=html
   autocmd BufNewFile,BufRead *.py setlocal ft=python
   autocmd BufNewFile,BufRead *.rb setlocal ft=ruby
   autocmd BufNewFile,BufRead Gemfile setlocal ft=ruby
   autocmd BufNewFile,BufRead *.coffee setlocal ft=coffee
   autocmd BufNewFile,BufRead *.ts setlocal ft=typescript
   autocmd BufNewFile,BufRead *.md setlocal ft=markdown
-  autocmd BufNewFile,BufRead *.jade setlocal ft=pug
+  autocmd BufNewFile,BufRead *.pug setlocal ft=pug
+  autocmd BufNewFile,BufRead *.amber setlocal ft=amber
   autocmd BufNewFile,BufRead *.gyp setlocal ft=json
   autocmd BufNewFile,BufRead *.cson setlocal ft=json
   autocmd BufNewFile,BufRead *.yml setlocal ft=yaml
@@ -423,3 +439,16 @@ let g:racer_cmd = '$HOME/.cargo/bin/racer'
 
 
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" vim-go 設定
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:go_fmt_command = 'goimports'
+let g:go_fmt_autosave = 1
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_fields = 1
+let g:go_highlight_types = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_build_constraints = 1
+let g:go_template_autocreate = 0
+autocmd BufWritePost *.go execute 'GoFmt'
