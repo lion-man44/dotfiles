@@ -11,9 +11,10 @@
 	df = diff
 	dfc = diff --cached
 	g = grep
-	remo = remote -v
+	r = remote
+	rpo = remote prune origin
+	rv = remote -v
 	sh = show
-	so = remote s origin
   st = stash
   stl = stash list
 	ad = add
@@ -22,7 +23,7 @@
 	l = log --graph
 	lo = log origin
 	la = log --graph --all --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(bold white)― %an%C(reset)%C(bold yellow)%d%C(reset)' --abbrev-commit --date=relative
-	lp = log -p
+	lp = log --graph -p
 [color]
 	status = auto
 	branch = auto
@@ -34,7 +35,6 @@
   diff = diff-highlight | less
 [core]
 	editor = vim
+	quotepath = false
 [merge]
 	tool = vimdiff
-[commit]
-  template = ~/dotfiles/.git_commit_template
