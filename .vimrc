@@ -200,7 +200,7 @@ set hlsearch
 set viminfo='20,\"5000
 
 " matchit.vimの導入
-source /usr/local/Cellar/vim/**/share/vim/**/macros/matchit.vim
+" source /usr/local/Cellar/vim/**/share/vim/**/macros/matchit.vim
 source /usr/local/Cellar/vim/**/share/vim/**/autoload/htmlcomplete.vim
 let b:match_words = '<:>,<div.*>:</div>'
 
@@ -452,3 +452,13 @@ let g:go_highlight_operators = 1
 let g:go_highlight_build_constraints = 1
 let g:go_template_autocreate = 0
 autocmd BufWritePost *.go execute 'GoFmt'
+
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" function 設定
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+function! CurrentFile()
+  echo expand('%:p')
+endfunction
+command! CurrentFile :call CurrentFile()
