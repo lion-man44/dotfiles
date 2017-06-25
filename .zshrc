@@ -230,11 +230,11 @@ export HOMEBREW_EDITOR='vim'
 
 # zsh auto suggestions {{{
 
-source ~/.zsh/zsh-autosuggestions/autosuggestions.zsh
-zle-line-init() {
-  zle autosuggest-start
-}
-zle -N zle-line-init
+source $(brew --prefix zsh-autosuggestions)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+# zle-line-init() {
+#   zle autosuggest-start
+# }
+# zle -N zle-line-init
 
 # }}}
 
