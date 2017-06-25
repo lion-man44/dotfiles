@@ -64,3 +64,5 @@ export PATH=$HOME/go/bin:$PATH
 # }}}
 
 [ -f ~/.ztokens ] && . ~/.ztokens
+
+export PATH="$HOME/.cargo/bin:$PATH"
