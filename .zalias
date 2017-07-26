@@ -68,10 +68,5 @@ alias dkc='docker-compose'
 
 # gcloud用のssh先まで {{{
 
-alias cdgcloud='cd ~/Developments/infra/papillon/machines/gce/gce-develop-lion/'
-alias cdpapi='cd ~/go/src/github.com/zuu-development/papillon'
-alias cdpapid='cd ~/docker/zuu/papillon'
-alias cdflower='cd ~/go/src/github.com/zuu-development/flower'
-alias cdflowerd='cd ~/docker/zuu/flower'
 
 # }}}
