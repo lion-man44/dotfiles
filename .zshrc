@@ -37,6 +37,16 @@ colors
 
 # }}}
 
+# word-chars で指定した文字が単語の区切りとみなされる。
+# M-f, M-b, ^w などの動作に影響する {{{
+
+#autoload -Uz select-word-style
+#select-word-style default
+#zstyle ':zle:*' word-chars ' /=;@:{}[]()<>,|.'
+#zstyle ':zle:*' word-style unspecified
+
+# }}}
+
 # ターミナルのタイトル {{{
 
 case "${TERM}" in
@@ -121,16 +131,17 @@ setopt hist_expand
 
 # }}}
 
+# vi f/F 相当の機能をzsh, bashでも提供する {{{
+
+bindkey '^]'   vi-find-next-char
+bindkey '^[^]' vi-find-prev-char
+
+# }}}
+
 # less command color {{{
 
 export LESS='-R'
 export LESSOPEN='| /usr/local/bin/src-hilite-lesspipe.sh %s'
-
-# }}}
-
-# git command diff-highlight {{{
-
-export PATH=/usr/local/share/git-core/contrib/diff-highlight:$PATH
 
 # }}}
 
@@ -190,7 +201,7 @@ fi
 
 # gulp sub-command completion {{{
 
-eval "$(gulp --completion=zsh)"
+# eval "$(gulp --completion=zsh)"
 
 # }}}
 
@@ -255,10 +266,10 @@ stty eof undef
 
 # }}}
 
-# gloogle cloud sdk {{{
+# gloogle cloud sdk の COMMAND PATH {{{
 
-source /opt/homebrew-cask/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc
-source /opt/homebrew-cask/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc
+source /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc
+source /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc
 
 # }}}
 
