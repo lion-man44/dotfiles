@@ -11,4 +11,5 @@ mkdir -p ~/.vim/bundle ;
 cd /tmp ;
 curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > installer.sh ;
 sh installer.sh ~/.vim/bundle ;
-cd - ;
+cd ~/dotfiles/ ;
+git clone git@github.com:mbadolato/iTerm2-Color-Schemes.git ;

@@ -11,6 +11,12 @@ fpath=($(brew --prefix)/share/zsh/site-functions $fpath)
 
 # }}}
 
+# 個別の環境変数などの読み込み {{{
+
+[ -f ~/.zalias ] && . ~/.ztokens
+
+# }}}
+
 # zshのalias読み込み {{{
 
 [ -f ~/.zalias ] && . ~/.zalias

@@ -30,7 +30,8 @@ export PATH=$HOME/.rbenv/bin:$PATH
 eval "$(rbenv init -)"
 
 # gem path
-export PATH=$HOME/.gem/ruby/2.3.0/bin:$HOME/.gem/ruby/2.4.0/bin:$PATH
+#export PATH=$HOME/.gem/ruby/2.4.0/bin:$HOME/.gem/ruby/2.5.0/bin:$PATH
+export PATH=$HOME/.gem/ruby/2.5.0/bin:$HOME/.gem/ruby/2.4.0/bin:$PATH
 
 # }}}
 
@@ -93,9 +94,9 @@ export JAVA_HOME=`/usr/libexec/java_home`
 
 # Go path {{{
 
-export GOPATH=$HOME/go
-export GOBIN=$HOME/go/bin
-export PATH=$HOME/go/bin:$PATH
+export GOPATH=$HOME/dev/go
+export GOBIN=$HOME/dev/go/bin
+export PATH=$GOBIN:$PATH
 
 # }}}
 

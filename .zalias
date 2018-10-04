@@ -50,6 +50,9 @@ alias ql='qlmanage -p "$@" >& /dev/null'
 ## pyenvのconfig warningを出さないようにするための設定
 alias brew='env PATH=${PATH/${HOME}\/\.pyenv\/shims:/} brew'
 
+## global ip
+alias global_ip='curl inet-ip.info'
+alias global_ip2='curl httpbin.org/ip'
 
 # }}}
 

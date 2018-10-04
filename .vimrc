@@ -258,7 +258,7 @@ endif
 " mapping設定
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " insertモードから抜ける
-inoremap <silent> jj <Esc> " visualモードから抜ける
+inoremap <silent> jj <Esc>
 vnoremap <silent> q <Esc>
 
 " Esc2回でハイライトを消す
