@@ -1,13 +1,13 @@
 # default unix like command {{{
 
-alias ll='ls -l'
+alias ll='ls -lh'
 alias la='ls -a'
 alias ls='ls -G'
-alias lla='ls -la'
-alias lal='ls -al'
+alias lla='ll -a'
+alias lal='ll -a'
 alias rm='rm -v'
 alias vi='vim'
-alias hist='history -i'
+alias hist='histry -i'
 alias mkdir='mkdir -p'
 alias grep='grep --color'
 alias diff='colordiff'
