@@ -69,3 +69,8 @@ alias dkc='docker-compose'
 
 # }}}
 
+# cluster tool {{{
+
+alias mk='minikube'
+
+# }}}

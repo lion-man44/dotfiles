@@ -4,10 +4,10 @@ if &compatible
 endif
 
 " Required:
-set runtimepath^=/Users/orange-lion/.vim/bundle/repos/github.com/Shougo/dein.vim
+set runtimepath^=~/.vim/bundle/repos/github.com/Shougo/dein.vim
 
 " Required:
-call dein#begin(expand('/Users/orange-lion/.vim/bundle'))
+call dein#begin(expand('~/.vim/bundle'))
 
 " Let dein manage dein
 " Required:
@@ -350,9 +350,9 @@ if !has('gui_running')
   set t_Co=256
 endif
 " laststatusのカラースキーマ
-let g:lightline = {
-  \ 'colorscheme': 'Dracula',
-  \ }
+" let g:lightline = {
+"   \ 'colorscheme': 'powerline',
+"   \ }
 
 
 

@@ -29,6 +29,12 @@ fpath=($(brew --prefix)/share/zsh/site-functions $fpath)
 
 # }}}
 
+# コマンドの補完{{{
+
+source <(minikube completion zsh)
+
+# }}}
+
 # zshの基本的な補完機能 {{{
 
 autoload -U compinit
@@ -257,12 +263,12 @@ source $(brew --prefix zsh-autosuggestions)/share/zsh-autosuggestions/zsh-autosu
 
 # Rust and cargo read PATH for rustup {{{
 
-source ~/.cargo/env
-fpath+=~/dotfiles/.zfunc/rustup
-fpath+=~/dotfiles/.zfunc/diesel
-export RUST_BACKTRACE=1
-export OPENSSL_INCLUDE_DIR=$(brew --prefix openssl)/include
-export DEP_OPENSSL_INCLUDE=$(brew --prefix openssl)/include
+# source ~/.cargo/env
+# fpath+=~/dotfiles/.zfunc/rustup
+# fpath+=~/dotfiles/.zfunc/diesel
+# export RUST_BACKTRACE=1
+# export OPENSSL_INCLUDE_DIR=$(brew --prefix openssl)/include
+# export DEP_OPENSSL_INCLUDE=$(brew --prefix openssl)/include
 
 # }}}
 
@@ -274,8 +280,8 @@ stty eof undef
 
 # gloogle cloud sdk の COMMAND PATH {{{
 
-source /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc
-source /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc
+# source /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc
+# source /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc
 
 # }}}
 
