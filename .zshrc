@@ -29,16 +29,17 @@ fpath=($(brew --prefix)/share/zsh/site-functions $fpath)
 
 # }}}
 
-# コマンドの補完{{{
-
-source <(minikube completion zsh)
-
-# }}}
-
 # zshの基本的な補完機能 {{{
 
 autoload -U compinit
 compinit
+
+# }}}
+
+# コマンドの補完{{{
+
+source <(kubectl completion zsh)
+source <(minikube completion zsh)
 
 # }}}
 
@@ -280,8 +281,8 @@ stty eof undef
 
 # gloogle cloud sdk の COMMAND PATH {{{
 
-# source /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc
-# source /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc
+source /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc
+source /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc
 
 # }}}
 
