@@ -30,8 +30,8 @@ export PATH=$HOME/.rbenv/bin:$PATH
 eval "$(rbenv init -)"
 
 # gem path
-#export PATH=$HOME/.gem/ruby/2.4.0/bin:$HOME/.gem/ruby/2.5.0/bin:$PATH
-export PATH=$HOME/.gem/ruby/**/bin:$PATH
+export PATH=$HOME/.gem/ruby/2.6.0/bin:$HOME/.gem/ruby/2.5.0/bin:$HOME/.gem/ruby/2.4.0/bin:$PATH
+#export PATH=$HOME/.rbenv/shims:$PATH
 
 # }}}
 
@@ -39,8 +39,8 @@ export PATH=$HOME/.gem/ruby/**/bin:$PATH
 
 ## node.jsのバージョン管理ツール、npmの読み込み {{{
 
-export PATH=$PATH:$HOME/.nodebrew/current/bin
 export NODEBREW_ROOT=$HOME/.nodebrew
+export PATH=$PATH:$NODEBREW_ROOT/current/bin
 
 # }}}
 
