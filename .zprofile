@@ -30,7 +30,7 @@ export PATH=$HOME/.rbenv/bin:$PATH
 eval "$(rbenv init -)"
 
 # gem path
-export PATH=$HOME/.gem/ruby/2.6.0/bin:$HOME/.gem/ruby/2.5.0/bin:$HOME/.gem/ruby/2.4.0/bin:$PATH
+export GEM_HOME=$HOME/.gem/ruby/2.6.0/bin:$HOME/.gem/ruby/2.5.0/bin
 #export PATH=$HOME/.rbenv/shims:$PATH
 
 # }}}
