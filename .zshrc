@@ -36,6 +36,12 @@ compinit
 
 # }}}
 
+# 前回のコマンドラインの結果を全選択できる機能(Iterm2専用) {{{
+
+[ -f ~/dotfiles/iterm2_shell_integration.zsh ] && . ~/dotfiles/iterm2_shell_integration.zsh
+
+# }}}
+
 # コマンドの補完{{{
 
 source <(kubectl completion zsh)
@@ -297,3 +303,6 @@ zle -N pet-select
 bindkey '^s' pet-select
 
 # }}}
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh" || true
+
