@@ -32,6 +32,7 @@ alias bes='be spring'
 alias besr='bes rake'
 alias e='express'
 alias gist='gist -o'
+alias k='kubectl'
 
 alias pybrew='pythonbrew'
 
