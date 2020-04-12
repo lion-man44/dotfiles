@@ -17,7 +17,7 @@
         "revision": "a23b82b1d0c444983450fc221e5d01a4f35dfe29"
       },
       "homebrew/core": {
-        "revision": "56ac0257ab96ffe442a9f83be78eb55e85e843b6"
+        "revision": "015f4a804c3b7a72abacc3a03cbc1ca3022f063a"
       },
       "kyoshidajp/ghkw": {
         "revision": "8f4123da40c18edc2492bf8738e5c2c0af9ee2ab"
@@ -1010,6 +1010,12 @@
           "full_name": "postman"
         }
       },
+      "rubymine": {
+        "version": "2019.3.4,193.6911.24",
+        "options": {
+          "full_name": "rubymine"
+        }
+      },
       "scrivener": {
         "version": "3.1.5,12258",
         "options": {
@@ -1065,7 +1071,7 @@
       "catalina": {
         "HOMEBREW_VERSION": "2.2.12",
         "HOMEBREW_PREFIX": "/usr/local",
-        "Homebrew/homebrew-core": "56ac0257ab96ffe442a9f83be78eb55e85e843b6",
+        "Homebrew/homebrew-core": "015f4a804c3b7a72abacc3a03cbc1ca3022f063a",
         "CLT": "11.4.0.0.1.1583798712",
         "Xcode": "11.4",
         "macOS": "10.15.3"
