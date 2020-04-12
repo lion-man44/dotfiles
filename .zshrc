@@ -1,10 +1,11 @@
 # プロンプトが表示されるたびにプロンプト文字列を評価、置換する {{{
 
 setopt prompt_subst
+setopt noflowcontrol
 
 # }}}
 
-setopt noflowcontrol
+
 # zshの補完定義ファイルの読み込み準備 {{{
 
 fpath=($(brew --prefix)/share/zsh/site-functions $fpath)
@@ -287,8 +288,8 @@ stty eof undef
 
 # gloogle cloud sdk の COMMAND PATH {{{
 
-source /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc
-source /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc
+[ -d /usr/local/Caskroom/google-cloud-sdk ] && . /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc
+[ -d /usr/local/Caskroom/google-cloud-sdk ] && . /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc
 
 # }}}
 
@@ -305,4 +306,5 @@ bindkey '^s' pet-select
 # }}}
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh" || true
+
 
