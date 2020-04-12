@@ -1,3 +1,9 @@
+# この環境だけのもの {{{
+
+[ -f ~/.ztokens ] && . ~/.ztokens
+
+# }}}
+
 ## 環境変数PATHへのコマンドパスの追加 {{{
 
 export PATH=/usr/local/bin:$PATH
@@ -100,14 +106,14 @@ export PATH=$GOBIN:$PATH
 
 # }}}
 
-# この環境だけのもの {{{
-
-[ -f ~/.ztokens ] && . ~/.ztokens
-
-# }}}
-
 # Rust path {{{
 
 export PATH="$HOME/.cargo/bin:$PATH"
+
+# }}}
+
+# Flutter path {{{
+
+[ -d $HOME/dev/mobile/flutter ] && export PATH=$HOME/dev/mobile/flutter/bin:$PATH
 
 # }}}
