@@ -21,6 +21,7 @@ alias memory_clean='sudo purge'
 # User command {{{
 
 alias g='git'
+alias h='hub'
 alias gopen='gitopen'
 
 alias r='ruby'
