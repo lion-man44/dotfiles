@@ -82,6 +82,8 @@ call dein#add('fatih/vim-go')
 
 call dein#add('yosssi/vim-ace')
 
+call dein#add('aklt/plantuml-syntax')
+
 if dein#check_install()
   call dein#install()
 endif
