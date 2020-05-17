@@ -45,8 +45,8 @@ export GEM_HOME=$HOME/.gem/ruby/2.6.0/bin:$HOME/.gem/ruby/2.5.0/bin
 
 ## node.jsのバージョン管理ツール、npmの読み込み {{{
 
-export NODEBREW_ROOT=$HOME/.nodebrew
-export PATH=$PATH:$NODEBREW_ROOT/current/bin
+export N_PREFIX=$HOME/.n
+export PATH=$PATH:$N_PREFIX/bin
 
 # }}}
 
