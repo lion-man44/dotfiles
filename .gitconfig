@@ -38,3 +38,7 @@
 	quotepath = false
 [merge]
 	tool = vimdiff
+[fetch]
+	prune = true
+[pull]
+	rebase = true
