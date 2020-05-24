@@ -99,13 +99,6 @@ precmd () {
     [[ -n "$vcs_info_msg_0_" ]] && psvar[1]="$vcs_info_msg_0_"
 }
 
-node_version() {
-    NODE_VERSION = `ls -l $NODEBREW_ROOT | egrep -o "v[0-9\.]+"`
-    if [ -n $NODE_VERSION ]; then
-      echo "%{$fg[yellow]%}[node-$NODE_VERSION]%{$reset_color}"
-    fi
-}
-
 # }}}
 
 # プロンプトの表示
@@ -220,32 +213,6 @@ fi
 
 # }}}
 
-# gulp sub-command completion {{{
-
-# eval "$(gulp --completion=zsh)"
-
-# }}}
-
-# history検索にpecoを使うかどうか {{{
-
-function peco-select-history() {
-    local tac
-    if which tac > /dev/null; then
-        tac="tac"
-    else
-        tac="tail -r"
-    fi
-    BUFFER=$(\history -n 1 | \
-        eval $tac | \
-        peco --query "$LBUFFER")
-    CURSOR=$#BUFFER
-    zle clear-screen
-}
-zle -N peco-select-history
-bindkey '^r' peco-select-history
-
-# }}}
-
 # zsh no matches found alertを切る
 # http://shirusu-ni-tarazu.hatenablog.jp/entry/2013/01/18/034233
 # {{{
@@ -291,17 +258,5 @@ stty eof undef
 
 [ -d /usr/local/Caskroom/google-cloud-sdk ] && . /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc
 [ -d /usr/local/Caskroom/google-cloud-sdk ] && . /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc
-
-# }}}
-
-# pet command line snipet {{{
-
-function pet-select() {
-  BUFFER=$(pet search --query "$LBUFFER")
-  CURSOR=$#BUFFER
-  zle redisplay
-}
-zle -N pet-select
-bindkey '^s' pet-select
 
 # }}}
