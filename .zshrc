@@ -1,3 +1,4 @@
+#!/bin/zsh
 # プロンプトが表示されるたびにプロンプト文字列を評価、置換する {{{
 
 setopt prompt_subst
@@ -304,7 +305,3 @@ zle -N pet-select
 bindkey '^s' pet-select
 
 # }}}
-
-
-# henesis autocomplete setup
-HENESIS_AC_ZSH_SETUP_PATH=/Users/lion/Library/Caches/@haechi-labs/henesis-cli/autocomplete/zsh_setup && test -f $HENESIS_AC_ZSH_SETUP_PATH && source $HENESIS_AC_ZSH_SETUP_PATH;
