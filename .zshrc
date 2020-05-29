@@ -31,6 +31,12 @@ fpath=($(brew --prefix)/share/zsh/site-functions $fpath)
 
 # }}}
 
+# zshのcolor読み込み {{{
+
+[ -f ~/.zscript ] && . ~/.zscript
+
+# }}}
+
 # zshの基本的な補完機能 {{{
 
 autoload -U compinit
