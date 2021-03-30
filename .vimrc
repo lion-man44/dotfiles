@@ -248,6 +248,7 @@ if has("autocmd")
   autocmd BufNewFile,BufRead *.ts setlocal ft=typescript
   autocmd BufNewFile,BufRead *.rs setlocal ft=rust
   autocmd BufNewFile,BufRead *.dart setlocal ft=dart
+  autocmd BufNewFile,BufRead ~/.zfunc/* :setlocal ft=zsh
 
   " ctagsファイルの設定ファイル
   autocmd BufNewFile,BufRead *.rb set tags+=;$HOME/.ruby.ctags;
