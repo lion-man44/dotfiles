@@ -6,10 +6,48 @@ setopt noflowcontrol
 
 # }}}
 
+# reload for zsh function {{{
+
+# helper function to autoload
+# Example 1 : zload ~/work/function/_f
+# Example 2 : zload *
+function zload {
+    if [[ "${#}" -le 0 ]]; then
+        echo "Usage: $0 PATH..."
+        echo 'Load specified files as an autoloading function'
+        return 1
+    fi
+
+    local file function_path function_name
+    for file in "$@"; do
+        if [[ -z "$file" ]]; then
+            continue
+        fi
+
+        function_path="${file:h}"
+        function_name="${file:t}"
+
+        if (( $+functions[$function_name] )) ; then
+            # "function_name" is defined
+            unfunction "$function_name"
+        fi
+        FPATH="$function_path" autoload -Uz +X "$function_name"
+
+        if [[ "$function_name" == _* ]]; then
+            # "function_name" is a completion script
+
+            # fpath requires absolute path
+            # convert relative path to absolute path with :a modifier
+            fpath=("${function_path:a}" $fpath) compinit
+        fi
+    done
+}
+
+# }}}
 
 # zshの補完定義ファイルの読み込み準備 {{{
 
-fpath=($(brew --prefix)/share/zsh/site-functions $fpath)
+fpath=($HOME/.zfunc/ $fpath)
 
 # }}}
 
@@ -38,6 +76,7 @@ fpath=($(brew --prefix)/share/zsh/site-functions $fpath)
 # }}}
 
 # zshの基本的な補完機能 {{{
+
 
 autoload -U compinit
 compinit
@@ -245,9 +284,6 @@ source $(brew --prefix zsh-autosuggestions)/share/zsh-autosuggestions/zsh-autosu
 
 # Rust and cargo read PATH for rustup {{{
 
-# source ~/.cargo/env
-# fpath+=~/dotfiles/.zfunc/rustup
-# fpath+=~/dotfiles/.zfunc/diesel
 # export RUST_BACKTRACE=1
 # export OPENSSL_INCLUDE_DIR=$(brew --prefix openssl)/include
 # export DEP_OPENSSL_INCLUDE=$(brew --prefix openssl)/include
@@ -265,4 +301,8 @@ stty eof undef
 [ -d /usr/local/Caskroom/google-cloud-sdk ] && . /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc
 [ -d /usr/local/Caskroom/google-cloud-sdk ] && . /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc
 
+export CLOUDSDK_PYTHON=python2
+
 # }}}
+
+[[ -s "$HOME/.avn/bin/avn.sh" ]] && source "$HOME/.avn/bin/avn.sh" # load avn
