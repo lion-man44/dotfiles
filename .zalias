@@ -54,8 +54,9 @@ alias ql='qlmanage -p "$@" >& /dev/null'
 alias brew='env PATH=${PATH/${HOME}\/\.pyenv\/shims:/} brew'
 
 ## global ip
-alias global_ip='curl inet-ip.info'
-alias global_ip2='curl httpbin.org/ip'
+alias global_ipv4='curl inet-ip.info'
+alias global_ipv4_2='curl httpbin.org/ip'
+alias global_ipv6='curl http://v6.ident.me'
 
 # }}}
 
