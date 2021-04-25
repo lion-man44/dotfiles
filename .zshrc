@@ -93,6 +93,7 @@ compinit
 
 source <(kubectl completion zsh)
 source <(minikube completion zsh)
+source <(gh completion -s zsh)
 
 # }}}
 
