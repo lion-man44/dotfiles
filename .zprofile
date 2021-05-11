@@ -4,6 +4,12 @@
 
 # }}}
 
+## Default editor {{{
+
+export EDITOR=vim
+
+# }}}
+
 ## 環境変数PATHへのコマンドパスの追加 {{{
 
 export PATH=/usr/local/bin:$PATH
@@ -115,5 +121,11 @@ export PATH="$HOME/.cargo/bin:$PATH"
 # Flutter path {{{
 
 [ -d $HOME/dev/mobile/flutter ] && export PATH=$HOME/dev/mobile/flutter/bin:$PATH
+
+# }}}
+
+# Deno path {{{
+
+export PATH=$HOME/.cret/bin:$PATH
 
 # }}}
