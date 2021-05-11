@@ -1,3 +1,9 @@
+# shortcut key for shell {{{
+
+bindkey -e
+
+# }}}
+
 # この環境だけのもの {{{
 
 [ -f ~/.ztokens ] && . ~/.ztokens
