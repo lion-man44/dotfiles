@@ -68,45 +68,18 @@ export PGDATA=/usr/local/var/postgres
 
 # }}}
 
-## pythonのバージョン管理ツールの設定ファイル読み込み {{{
+# gloogle cloud sdk の COMMAND PATH {{{
 
-#export PYENV_ROOT=$HOME/.pyenv
-#if [ -d $PYENV_ROOT ]; then
-#  export PATH=$PYENV_ROOT/bin:$PATH
-#  eval "$(pyenv init -)"
-#  eval "$(pyenv virtualenv-init -)"
-#fi
+[ -d /usr/local/Caskroom/google-cloud-sdk ] && . /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc
+[ -d /usr/local/Caskroom/google-cloud-sdk ] && . /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc
 
-# }}}
-
-## Added by the Heroku Toolbelt {{{
-
-#export PATH="/usr/local/heroku/bin:$PATH"
+export CLOUDSDK_PYTHON=python2
 
 # }}}
 
 # java_home {{{
 
 export JAVA_HOME=`/usr/libexec/java_home`
-
-# }}}
-
-# python path {{{
-
-#export PYTHONPATH=/usr/local/lib/python2.7/site-packages
-
-# }}}
-
-# pkg-config {{{
-
-#export PKG_CONFIG_PATH=/opt/X11/lib/pkgconfig
-
-# }}}
-
-# Haskell用のバージョン管理ツールstackのPATH {{{
-
-# http://docs.haskellstack.org/en/stable/install_and_upgrade/#mac-os-x
-#export PATH=$HOME/.local/bin:$PATH
 
 # }}}
 

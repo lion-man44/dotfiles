@@ -37,3 +37,109 @@ zle -N peco-select-history
 bindkey '^r' peco-select-history
 
 # }}}
+
+# reload for zsh function {{{
+
+# helper function to autoload
+# Example 1 : zload ~/work/function/_f
+# Example 2 : zload *
+function zload {
+    if [[ "${#}" -le 0 ]]; then
+        echo "Usage: $0 PATH..."
+        echo 'Load specified files as an autoloading function'
+        return 1
+    fi
+
+    local file function_path function_name
+    for file in "$@"; do
+        if [[ -z "$file" ]]; then
+            continue
+        fi
+
+        function_path="${file:h}"
+        function_name="${file:t}"
+
+        if (( $+functions[$function_name] )) ; then
+            # "function_name" is defined
+            unfunction "$function_name"
+        fi
+        FPATH="$function_path" autoload -Uz +X "$function_name"
+
+        if [[ "$function_name" == _* ]]; then
+            # "function_name" is a completion script
+
+            # fpath requires absolute path
+            # convert relative path to absolute path with :a modifier
+            fpath=("${function_path:a}" $fpath) compinit
+        fi
+    done
+}
+
+# }}}
+
+# direnv の実行 {{{
+
+eval "$(direnv hook zsh)"
+
+# }}}
+
+# avn (for node.js) {{{
+
+[[ -s "$HOME/.avn/bin/avn.sh" ]] && source "$HOME/.avn/bin/avn.sh"
+
+# }}}
+
+# npm command completion script
+#
+# Installation: npm completion >> ~/.bashrc  (or ~/.zshrc)
+# Or, maybe: npm completion > /usr/local/etc/bash_completion.d/npm
+#
+# {{{
+
+COMP_WORDBREAKS=${COMP_WORDBREAKS/=/}
+COMP_WORDBREAKS=${COMP_WORDBREAKS/@/}
+export COMP_WORDBREAKS
+
+if type complete &>/dev/null; then
+  _npm_completion () {
+    local si="$IFS"
+    IFS=$'\n' COMPREPLY=($(COMP_CWORD="$COMP_CWORD" \
+                           COMP_LINE="$COMP_LINE" \
+                           COMP_POINT="$COMP_POINT" \
+                           npm completion -- "${COMP_WORDS[@]}" \
+                           2>/dev/null)) || return $?
+    IFS="$si"
+  }
+  complete -F _npm_completion npm
+elif type compdef &>/dev/null; then
+  _npm_completion() {
+    si=$IFS
+    compadd -- $(COMP_CWORD=$((CURRENT-1)) \
+                 COMP_LINE=$BUFFER \
+                 COMP_POINT=0 \
+                 npm completion -- "${words[@]}" \
+                 2>/dev/null)
+    IFS=$si
+  }
+  compdef _npm_completion npm
+elif type compctl &>/dev/null; then
+  _npm_completion () {
+    local cword line point words si
+    read -Ac words
+    read -cn cword
+    let cword-=1
+    read -l line
+    read -ln point
+    si="$IFS"
+    IFS=$'\n' reply=($(COMP_CWORD="$cword" \
+                       COMP_LINE="$line" \
+                       COMP_POINT="$point" \
+                       npm completion -- "${words[@]}" \
+                       2>/dev/null)) || return $?
+    IFS="$si"
+  }
+  compctl -K _npm_completion npm
+fi
+
+# }}}
+
