@@ -4,6 +4,18 @@ bindkey -e
 
 # }}}
 
+# zsh auto suggestions {{{
+
+source $(brew --prefix zsh-autosuggestions)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+# }}}
+
+# 前回のコマンドラインの結果を全選択できる機能(Iterm2専用) {{{
+
+[ -f /Applications/iTerm.app/Contents/Resources/iterm2_shell_integration.zsh ] && . /Applications/iTerm.app/Contents/Resources/iterm2_shell_integration.zsh
+
+# }}}
+
 # この環境だけのもの {{{
 
 [ -f ~/.ztokens ] && . ~/.ztokens
@@ -13,6 +25,7 @@ bindkey -e
 ## Default editor {{{
 
 export EDITOR=vim
+export HOMEBREW_EDITOR=vim
 
 # }}}
 
@@ -23,19 +36,7 @@ export PATH=/usr/local/sbin:$PATH
 
 # }}}
 
-## 環境変数系 {{{
-
-[[ -s "$HOME/dotfiles/zenv" ]] && source "$HOME/dotfiles/zenv"
-
-# }}}
-
-## Homebrew Caskroomのパス設定 {{{
-
-#export HOMEBREW_CASK_OPTS="--appdir=/Applications --caskroom=/opt/homebrew-cask/Caskroom"
-
-# }}}
-
-# git command diff-highlight {{{
+# git diff-highlight {{{
 
 export PATH=/usr/local/share/git-core/contrib/diff-highlight:$PATH
 
@@ -47,13 +48,7 @@ export RUBY_CONFIGURE_OPTS="--with-openssl-dir=`brew --prefix openssl` --with-re
 export PATH=$HOME/.rbenv/bin:$PATH
 eval "$(rbenv init -)"
 
-# gem path
-export GEM_HOME=$HOME/.gem/ruby/2.6.0/bin:$HOME/.gem/ruby/2.5.0/bin
-#export PATH=$HOME/.rbenv/shims:$PATH
-
 # }}}
-
-
 
 ## node.jsのバージョン管理ツール、npmの読み込み {{{
 

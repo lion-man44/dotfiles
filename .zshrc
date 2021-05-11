@@ -6,12 +6,6 @@ setopt noflowcontrol
 
 # }}}
 
-# zsh auto suggestions {{{
-
-source $(brew --prefix zsh-autosuggestions)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-
-# }}}
-
 # zshの補完定義ファイルの読み込み準備 {{{
 
 fpath=($HOME/.zfunc/ $fpath)
@@ -47,20 +41,6 @@ fpath=($HOME/.zfunc/ $fpath)
 
 autoload -U compinit
 compinit
-
-# }}}
-
-# 前回のコマンドラインの結果を全選択できる機能(Iterm2専用) {{{
-
-[ -f /Applications/iTerm.app/Contents/Resources/iterm2_shell_integration.zsh ] && . /Applications/iTerm.app/Contents/Resources/iterm2_shell_integration.zsh
-
-# }}}
-
-# コマンドの補完{{{
-
-source <(kubectl completion zsh)
-source <(minikube completion zsh)
-source <(gh completion -s zsh)
 
 # }}}
 
@@ -177,12 +157,6 @@ export LESSOPEN='| /usr/local/bin/src-hilite-lesspipe.sh %s'
 # {{{
 
 setopt nonomatch
-
-# }}}
-
-# homebrew editor {{{
-
-export HOMEBREW_EDITOR='vim'
 
 # }}}
 
