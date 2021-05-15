@@ -101,5 +101,6 @@ export PATH="$HOME/.cargo/bin:$PATH"
 # Deno path {{{
 
 export PATH=$HOME/.cret/bin:$PATH
+export PATH=$HOME/.deno/bin:$PATH
 
 # }}}
