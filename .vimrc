@@ -74,15 +74,15 @@ call dein#add('racer-rust/vim-racer')
 " highlight for vue
 call dein#add('posva/vim-vue')
 
-" highlight for pug
-call dein#add('digitaltoad/vim-pug')
-
 " high performance for golang
 call dein#add('fatih/vim-go')
 
 call dein#add('yosssi/vim-ace')
 
 call dein#add('aklt/plantuml-syntax')
+
+call dein#add('leafgarland/typescript-vim')
+call dein#add('peitalin/vim-jsx-typescript')
 
 if dein#check_install()
   call dein#install()
