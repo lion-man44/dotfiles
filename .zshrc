@@ -27,7 +27,7 @@ fpath=($HOME/.zfunc/ $fpath)
 
 # zshのalias読み込み {{{
 
-[ -f ~/.zalias ] && . ~/.zalias
+[ -f ~/.aliases ] && . ~/.aliases
 
 # }}}
 

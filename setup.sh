@@ -2,7 +2,7 @@ ln -s ./dotfiles/Brewfile ~/Brewfile ;
 ln -s ./dotfiles/.vimrc ~/.vimrc ;
 ln -s ./dotfiles/.vim ~/.vim ;
 ln -s ./dotfiles/.zprofile ~/.zprofile ;
-ln -s ./dotfiles/.zalias ~/.zalias ;
+ln -s ./dotfiles/.aliases ~/.aliases ;
 ln -s ./dotfiles/.zscript ~/.zscript ;
 ln -s ./dotfiles/.zfunc ~/.zfunc ;
 ln -s ./dotfiles/.zshrc ~/.zshrc ;
