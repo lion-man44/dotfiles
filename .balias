@@ -7,25 +7,9 @@ alias vi="vim"
 
 alias mkdir="mkdir -p"
 
-alias cd="pushd > /dev/null"
-
-#pushd() {
-#  if [ $# -eq 0 ]; then
-#    DIR="$HOME"
-#  else
-#    DIR="$1"
-#  fi
-#
-#  builtin pushd "$DIR" > /dev/null
-#  echo -n "DIRSTACK: "
-#  dirs
-#}
-# User commands
 alias g="git"
+alias h="hub"
 
 alias b="bundle"
 alias be="b exec"
 
-alias rs="redscript"
-
-alias ca="casperjs"
