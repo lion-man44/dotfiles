@@ -4,6 +4,8 @@ endif
 " Add the dein installation directory into runtimepath
 set runtimepath+=~/.vim/bundle/repos/github.com/Shougo/dein.vim
 
+let g:dein#install_github_api_token = $GITHUB_PERSONAL_TOKEN
+
 if dein#load_state('~/.vim/bundle')
   call dein#begin('~/.vim/bundle')
 
@@ -89,6 +91,9 @@ if dein#check_install()
 endif
 
 call map(dein#check_clean(), "delete(v:val, 'rf')")
+
+call dein#update('dein.vim')
+call dein#check_update(v:true)
 
 "End dein Scripts-------------------------
 
