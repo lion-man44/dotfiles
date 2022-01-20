@@ -22,7 +22,6 @@ fi
 
 # Basic section {{{
 
-export LANG=ja_JP.utf8
 export TERM=xterm-256color
 
 ## Set type of characters that the readline library treats as delimiters
@@ -47,14 +46,6 @@ HISTCONTROL=ignoreboth
 
 # append to the history file, don't overwrite it
 shopt -s histappend
-
-# }}}
-
-# Language section {{{
-
-## for ruby
-export PATH="~/.rbenv/bin:$PATH"
-eval "$(rbenv init - bash)"
 
 # }}}
 

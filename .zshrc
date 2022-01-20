@@ -19,12 +19,6 @@ fpath=($HOME/.zfunc/ $fpath)
 
 # }}}
 
-# 個別の環境変数などの読み込み {{{
-
-[ -f ~/.ztokens ] && . ~/.ztokens
-
-# }}}
-
 # zshのalias読み込み {{{
 
 [ -f ~/.aliases ] && . ~/.aliases

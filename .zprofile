@@ -22,7 +22,7 @@ source $(brew --prefix zsh-autosuggestions)/share/zsh-autosuggestions/zsh-autosu
 
 # この環境だけのもの {{{
 
-[ -f ~/.ztokens ] && . ~/.ztokens
+[ -f ~/.tokens ] && . ~/.tokens
 
 # }}}
 
