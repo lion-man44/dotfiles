@@ -206,7 +206,7 @@ set viminfo='20,\"5000
 
 " matchit.vimの導入
 " source /usr/local/Cellar/vim/**/share/vim/**/macros/matchit.vim
-source /usr/local/Cellar/vim/**/share/vim/**/autoload/htmlcomplete.vim
+source ~/.vim/bundle/repos/github.com/taichouchou2/html5.vim/autoload/htmlcomplete.vim
 let b:match_words = '<:>,<div.*>:</div>'
 
 " 前に開いたファイルのラインを記憶する
