@@ -44,7 +44,7 @@ call dein#add('elzr/vim-json')
 " css3のsyntax
 call dein#add('hail2u/vim-css3-syntax')
 " html5のindentとsyntaxを追加
-call dein#add('taichouchou2/html5.vim')
+call dein#add('othree/html5.vim')
 
 " slimのsyntax
 call dein#add('slim-template/vim-slim')
@@ -211,7 +211,7 @@ set viminfo='20,\"5000
 
 " matchit.vimの導入
 " source /usr/local/Cellar/vim/**/share/vim/**/macros/matchit.vim
-source ~/.vim/bundle/repos/github.com/taichouchou2/html5.vim/autoload/htmlcomplete.vim
+source ~/.vim/bundle/repos/github.com/othree/html5.vim/autoload/htmlcomplete.vim
 let b:match_words = '<:>,<div.*>:</div>'
 
 " 前に開いたファイルのラインを記憶する
