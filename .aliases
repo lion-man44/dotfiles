@@ -1,9 +1,9 @@
 #! /bin/sh
 # default unix like command {{{
 
+alias ls='ls -G --color'
 alias ll='ls -lh'
 alias la='ls -a'
-alias ls='ls -G'
 alias lla='ll -a'
 alias lal='ll -a'
 alias rm='rm -v'
@@ -11,6 +11,7 @@ alias vi='vim'
 alias hist='history -i'
 alias mkdir='mkdir -p'
 alias grep='grep --color'
+alias egrep='egrep --color'
 alias diff='colordiff'
 alias memory_clean='sudo purge'
 
