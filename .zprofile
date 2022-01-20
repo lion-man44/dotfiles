@@ -6,6 +6,10 @@ bindkey -e
 
 # zsh auto suggestions {{{
 
+if [ `uname -m` = "arm64" ]; then
+  export PATH=$PATH:/opt/homebrew/bin
+  export PATH=$PATH:$(brew --prefix bison)/bin
+fi
 source $(brew --prefix zsh-autosuggestions)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # }}}
@@ -31,21 +35,21 @@ export HOMEBREW_EDITOR=vim
 
 ## 環境変数PATHへのコマンドパスの追加 {{{
 
-export PATH=/usr/local/bin:$PATH
-export PATH=/usr/local/sbin:$PATH
+export PATH=$PATH:/usr/local/bin
+export PATH=$PATH:/usr/local/sbin
 
 # }}}
 
 # git diff-highlight {{{
 
-export PATH=/usr/local/share/git-core/contrib/diff-highlight:$PATH
+export PATH=$PATH:/usr/local/share/git-core/contrib/diff-highlight
 
 # }}}
 
 ## rbenvのパス設定 {{{
 
 export RUBY_CONFIGURE_OPTS="--with-openssl-dir=`brew --prefix openssl` --with-readline-dir=`brew --prefix readline`"
-export PATH=$HOME/.rbenv/bin:$PATH
+export PATH=$PATH:$HOME/.rbenv/bin
 eval "$(rbenv init -)"
 
 # }}}
@@ -81,26 +85,30 @@ export JAVA_HOME=`/usr/libexec/java_home`
 # Go path {{{
 
 export GOPATH=$HOME/dev/go
-export GOBIN=$HOME/dev/go/bin
-export PATH=$GOBIN:$PATH
+export GOBIN=$GOPATH/bin
+
+export GOENV_ROOT=$HOME/.goenv
+export PATH=$PATH:$GOENV_ROOT/bin
+
+export PATH=$PATH:$GOROOT/bin
+export PATH=$PATH:$GOBIN
 
 # }}}
 
 # Rust path {{{
 
-export PATH="$HOME/.cargo/bin:$PATH"
+export PATH=$PATH:$HOME/.cargo/bin
 
 # }}}
 
 # Flutter path {{{
 
-[ -d $HOME/dev/mobile/flutter ] && export PATH=$HOME/dev/mobile/flutter/bin:$PATH
+[ -d $HOME/dev/mobile/flutter ] && export PATH=$PATH:$HOME/dev/mobile/flutter/bin
 
 # }}}
 
 # Deno path {{{
 
-export PATH=$HOME/.cret/bin:$PATH
-export PATH=$HOME/.deno/bin:$PATH
+export PATH=$PATH:$HOME/.deno/bin
 
 # }}}

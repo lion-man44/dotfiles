@@ -6,6 +6,13 @@ setopt noflowcontrol
 
 # }}}
 
+# zshの基本的な補完機能 {{{
+
+autoload -U compinit
+compinit
+
+# }}}
+
 # zshの補完定義ファイルの読み込み準備 {{{
 
 fpath=($HOME/.zfunc/ $fpath)
@@ -36,13 +43,7 @@ fpath=($HOME/.zfunc/ $fpath)
 
 # }}}
 
-# zshの基本的な補完機能 {{{
-
-
-autoload -U compinit
-compinit
-
-# }}}
+eval "$(goenv init -)"
 
 # zshの基本的な塗装機能 {{{
 
@@ -123,6 +124,7 @@ setopt nobeep
 HISTFILE=~/.zsh_history
 HISTSIZE=5000000
 SAVEHIST=5000000
+HISTCONTROL=ignoreboth
 
 # }}}
 
