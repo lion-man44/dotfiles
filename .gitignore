@@ -3,7 +3,6 @@
 bundle/
 .neobundle/
 .netrwhist
-.ztokens
 .tokens
 iTerm2-Color-Schemes/
 Brewfile.lock.json
