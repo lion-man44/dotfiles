@@ -61,9 +61,13 @@ export PATH=$PATH:$N_PREFIX/bin
 
 # }}}
 
-## postgresqlの環境パス {{{
+## For databases path {{{
 
 export PGDATA=/usr/local/var/postgres
+
+export PATH=$PATH:$(brew --prefix mysql@5.7)/bin
+
+export PATH=$PATH:$(brew --prefix redis)/bin
 
 # }}}
 
