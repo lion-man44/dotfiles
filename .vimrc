@@ -92,8 +92,8 @@ endif
 
 call map(dein#check_clean(), "delete(v:val, 'rf')")
 
+" call dein#check_update(v:true)
 call dein#update('dein.vim')
-call dein#check_update(v:true)
 
 "End dein Scripts-------------------------
 
