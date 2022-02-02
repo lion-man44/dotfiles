@@ -42,7 +42,7 @@ export PATH=$PATH:/usr/local/sbin
 
 # git diff-highlight {{{
 
-export PATH=$PATH:/usr/local/share/git-core/contrib/diff-highlight
+export PATH=$PATH:$(brew --prefix git)/share/git-core/contrib/diff-highlight
 
 # }}}
 
