@@ -7,8 +7,8 @@ bindkey -e
 # zsh auto suggestions {{{
 
 if [ `uname -m` = "arm64" ]; then
-  export PATH=$PATH:/opt/homebrew/bin
-  export PATH=$PATH:$(brew --prefix bison)/bin
+  export PATH=/opt/homebrew/bin:$PATH
+  export PATH=$(brew --prefix bison)/bin:$PATH
 fi
 source $(brew --prefix zsh-autosuggestions)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
@@ -35,21 +35,21 @@ export HOMEBREW_EDITOR=vim
 
 ## 環境変数PATHへのコマンドパスの追加 {{{
 
-export PATH=$PATH:/usr/local/bin
-export PATH=$PATH:/usr/local/sbin
+export PATH=/usr/local/bin:$PATH
+export PATH=/usr/local/sbin:$PATH
 
 # }}}
 
 # git diff-highlight {{{
 
-export PATH=$PATH:$(brew --prefix git)/share/git-core/contrib/diff-highlight
+export PATH=$(brew --prefix git)/share/git-core/contrib/diff-highlight:$PATH
 
 # }}}
 
 ## rbenvのパス設定 {{{
 
 export RUBY_CONFIGURE_OPTS="--with-openssl-dir=`brew --prefix openssl` --with-readline-dir=`brew --prefix readline`"
-export PATH=$PATH:$HOME/.rbenv/bin
+export PATH=$HOME/.rbenv/bin:$PATH
 eval "$(rbenv init -)"
 
 # }}}
@@ -57,7 +57,7 @@ eval "$(rbenv init -)"
 ## node.jsのバージョン管理ツール、npmの読み込み {{{
 
 export N_PREFIX=$HOME/.n
-export PATH=$PATH:$N_PREFIX/bin
+export PATH=$N_PREFIX/bin:$PATH
 
 # }}}
 
@@ -65,9 +65,8 @@ export PATH=$PATH:$N_PREFIX/bin
 
 export PGDATA=/usr/local/var/postgres
 
-export PATH=$PATH:$(brew --prefix mysql@5.7)/bin
-
-export PATH=$PATH:$(brew --prefix redis)/bin
+export PATH=$(brew --prefix mysql@5.7)/bin:$PATH
+export PATH=$(brew --prefix redis)/bin:$PATH
 
 # }}}
 
@@ -91,28 +90,28 @@ export JAVA_HOME=`/usr/libexec/java_home`
 export GOPATH=$HOME/dev/go
 export GOBIN=$GOPATH/bin
 
-export GOENV_ROOT=$HOME/.goenv
-export PATH=$PATH:$GOENV_ROOT/bin
+#export GOENV_ROOT=$HOME/.goenv
+#export PATH=$PATH:$GOENV_ROOT/bin
 
-export PATH=$PATH:$GOROOT/bin
-export PATH=$PATH:$GOBIN
+export PATH=$GOROOT/bin:$PATH
+export PATH=$GOBIN:$PATH
 
 # }}}
 
 # Rust path {{{
 
-export PATH=$PATH:$HOME/.cargo/bin
+export PATH=$HOME/.cargo/bin:$PATH
 
 # }}}
 
 # Flutter path {{{
 
-[ -d $HOME/dev/mobile/flutter ] && export PATH=$PATH:$HOME/dev/mobile/flutter/bin
+[ -d $HOME/dev/mobile/flutter ] && export PATH=$HOME/dev/mobile/flutter/bin:$PATH
 
 # }}}
 
 # Deno path {{{
 
-export PATH=$PATH:$HOME/.deno/bin
+export PATH=$HOME/.deno/bin:$PATH
 
 # }}}
