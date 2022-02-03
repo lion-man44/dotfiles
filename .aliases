@@ -69,7 +69,7 @@ alias shell-color-all='for fore in `seq 30 37`; do echo -e "\e[${fore}m \\\e[${f
 
 # docker command {{{
 
-alias dk='nerdctl'
+alias dk='docker'
 alias dkc='dk compose'
 
 # }}}
