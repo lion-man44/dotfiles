@@ -24,29 +24,18 @@ alias memory_clean='sudo purge'
 
 alias g='git'
 alias h='hub'
-alias gopen='gitopen'
 
 alias r='ruby'
-alias py='python'
+alias py='python3'
 
 alias b='bundle'
 alias be='b exec'
-alias bes='be spring'
-alias besr='bes rake'
-alias e='express'
 alias gist='gist -o'
 alias k='kubectl'
+alias tree='tree -a -I "\.DS_Store|\.git|node_modules|vendor\/bundle" -N'
+
 
 alias pybrew='pythonbrew'
-
-## tmux command
-alias tmuxn='tmux new-session \; source-file ~/.tmux/session'
-
-## brew コマンドを使用する時だけPATHからopt/ImageMagick/binを抜く
-alias brew='env PATH=${PATH/\/opt\/ImageMagick\/bin:/} brew'
-
-## ctagsのmac用コマンド
-alias ctags='`brew --prefix`/bin/ctags'
 
 ## 画像のプレビュー機能
 alias ql='qlmanage -p "$@" >& /dev/null'

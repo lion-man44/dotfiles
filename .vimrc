@@ -16,6 +16,71 @@ if dein#load_state('~/.vim/bundle')
     call dein#add('roxma/vim-hug-neovim-rpc')
   endif
 
+  " editorconfig
+  call dein#add('editorconfig/editorconfig-vim')
+
+  " tomlファイル syntax
+  call dein#add('cespare/vim-toml')
+
+  " JSのsyntax
+  call dein#add('jelera/vim-javascript-syntax')
+
+  " vim上で行う言語等のコマンド補完
+  call dein#add('Shougo/neocomplete.vim')
+  " 現在のzen-coding
+  call dein#add('mattn/emmet-vim')
+  " 味気ないlaststatusをかっこ良くしてくれる現在の人気
+  call dein#add('itchyny/lightline.vim')
+
+  " JSONカラーリング
+  call dein#add('elzr/vim-json')
+  " css3のsyntax
+  call dein#add('hail2u/vim-css3-syntax')
+  " html5のindentとsyntaxを追加
+  call dein#add('othree/html5.vim')
+
+  " slimのsyntax
+  call dein#add('slim-template/vim-slim')
+
+  " rails使いの定番
+  call dein#add('tpope/vim-rails')
+
+  " 高速ファイラー
+  call dein#add('kien/ctrlp.vim')
+
+  " vimgrepなどをagコマンドでやる
+  call dein#add('rking/ag.vim')
+
+  " 最高に最高なインクリメンタルサーチ
+  call dein#add('haya14busa/incsearch.vim')
+
+  " vimにカラー表示をしてくれる #f32 とか
+  call dein#add('lilydjwg/colorizer')
+
+  " color schema
+  call dein#add('jyota/vimColors')
+
+  " Rust programing syntax
+  call dein#add('rust-lang/rust.vim')
+
+  " rust completion
+  call dein#add('racer-rust/vim-racer')
+
+  " highlight for vue
+  call dein#add('posva/vim-vue')
+
+  " high performance for golang
+  call dein#add('fatih/vim-go')
+
+  call dein#add('yosssi/vim-ace')
+
+  call dein#add('aklt/plantuml-syntax')
+
+  call dein#add('leafgarland/typescript-vim')
+  call dein#add('peitalin/vim-jsx-typescript')
+
+  call dein#add('hashivim/vim-terraform')
+
   call dein#end()
   call dein#save_state()
 endif
@@ -23,68 +88,6 @@ endif
 filetype plugin indent on
 syntax enable
 
-" editorconfig
-call dein#add('editorconfig/editorconfig-vim')
-
-" tomlファイル syntax
-call dein#add('cespare/vim-toml')
-
-" JSのsyntax
-call dein#add('jelera/vim-javascript-syntax')
-
-" vim上で行う言語等のコマンド補完
-call dein#add('Shougo/neocomplete.vim')
-" 現在のzen-coding
-call dein#add('mattn/emmet-vim')
-" 味気ないlaststatusをかっこ良くしてくれる現在の人気
-call dein#add('itchyny/lightline.vim')
-
-" JSONカラーリング
-call dein#add('elzr/vim-json')
-" css3のsyntax
-call dein#add('hail2u/vim-css3-syntax')
-" html5のindentとsyntaxを追加
-call dein#add('othree/html5.vim')
-
-" slimのsyntax
-call dein#add('slim-template/vim-slim')
-
-" rails使いの定番
-call dein#add('tpope/vim-rails')
-
-" 高速ファイラー
-call dein#add('kien/ctrlp.vim')
-
-" vimgrepなどをagコマンドでやる
-call dein#add('rking/ag.vim')
-
-" 最高に最高なインクリメンタルサーチ
-call dein#add('haya14busa/incsearch.vim')
-
-" vimにカラー表示をしてくれる #f32 とか
-call dein#add('lilydjwg/colorizer')
-
-" color schema
-call dein#add('jyota/vimColors')
-
-" Rust programing syntax
-call dein#add('rust-lang/rust.vim')
-
-" rust completion
-call dein#add('racer-rust/vim-racer')
-
-" highlight for vue
-call dein#add('posva/vim-vue')
-
-" high performance for golang
-call dein#add('fatih/vim-go')
-
-call dein#add('yosssi/vim-ace')
-
-call dein#add('aklt/plantuml-syntax')
-
-call dein#add('leafgarland/typescript-vim')
-call dein#add('peitalin/vim-jsx-typescript')
 
 if dein#check_install()
   call dein#install()
@@ -93,7 +96,7 @@ endif
 call map(dein#check_clean(), "delete(v:val, 'rf')")
 
 " call dein#check_update(v:true)
-call dein#update('dein.vim')
+" call dein#update('dein.vim')
 
 "End dein Scripts-------------------------
 
@@ -229,8 +232,8 @@ if has("autocmd")
   " ファイル種別による個別設定(初期設定ではexpandtabなのでその設定はいれない)
   " ts = tabstop, sts = softtabstop, sw = shiftwidth, tw = textwidth
   " ft = filetype
-  autocmd FileType html,xhtml,css,yaml,ruby,javascript,coffee setlocal ts=2 sts=2 sw=2
-  autocmd FileType python,typescript setlocal ts=4 sts=4 sw=4
+  autocmd FileType html,xhtml,css,yaml,ruby,javascript,coffee,typescript setlocal ts=2 sts=2 sw=2
+  autocmd FileType python setlocal ts=4 sts=4 sw=4
 
   " ファイルを開いた時、読み込んだ時にファイルタイプを設定する
   autocmd BufNewFile,BufRead *.js setlocal ft=javascript

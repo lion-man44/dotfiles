@@ -4,6 +4,13 @@ bindkey -e
 
 # }}}
 
+# LC_* {{{
+
+export LC_CTYPE=en_US.UTF-8
+export LESSCHARSET=UTF-8
+
+# }}}
+
 # zsh auto suggestions {{{
 
 if [ `uname -m` = "arm64" ]; then
@@ -48,7 +55,7 @@ export PATH=$(brew --prefix git)/share/git-core/contrib/diff-highlight:$PATH
 
 ## rbenvのパス設定 {{{
 
-export RUBY_CONFIGURE_OPTS="--with-openssl-dir=`brew --prefix openssl` --with-readline-dir=`brew --prefix readline`"
+#export RUBY_CONFIGURE_OPTS="--with-openssl-dir=`brew --prefix openssl@1.1` --with-readline-dir=`brew --prefix readline`"
 export PATH=$HOME/.rbenv/bin:$PATH
 eval "$(rbenv init -)"
 
@@ -72,10 +79,10 @@ export PATH=$(brew --prefix redis)/bin:$PATH
 
 # gloogle cloud sdk の COMMAND PATH {{{
 
-[ -d /usr/local/Caskroom/google-cloud-sdk ] && . /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc
-[ -d /usr/local/Caskroom/google-cloud-sdk ] && . /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc
-
-export CLOUDSDK_PYTHON=python2
+if [ -d /opt/homebrew/Caskroom/google-cloud-sdk ]; then
+  source /opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc
+  source /opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc
+fi
 
 # }}}
 
@@ -107,6 +114,7 @@ export PATH=$HOME/.cargo/bin:$PATH
 # Flutter path {{{
 
 [ -d $HOME/dev/mobile/flutter ] && export PATH=$HOME/dev/mobile/flutter/bin:$PATH
+export PATH=$HOME/fvm/default/bin:$PATH
 
 # }}}
 
