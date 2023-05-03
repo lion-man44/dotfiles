@@ -151,7 +151,7 @@ bindkey '^[^]' vi-find-prev-char
 # less command color {{{
 
 export LESS='-R'
-export LESSOPEN='| /usr/local/bin/src-hilite-lesspipe.sh %s'
+export LESSOPEN='| /opt/homebrew/bin/src-hilite-lesspipe.sh %s'
 
 # }}}
 
