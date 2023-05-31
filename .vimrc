@@ -51,9 +51,6 @@ if dein#load_state('~/.vim/bundle')
   " vimgrepなどをagコマンドでやる
   call dein#add('rking/ag.vim')
 
-  " 最高に最高なインクリメンタルサーチ
-  call dein#add('haya14busa/incsearch.vim')
-
   " vimにカラー表示をしてくれる #f32 とか
   call dein#add('lilydjwg/colorizer')
 
@@ -427,15 +424,6 @@ endif
 let g:user_emmet_settings = {
       \ 'lang': 'ja'
       \ }
-
-
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" incsearch設定
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-map /  <Plug>(incsearch-forward)
-map ?  <Plug>(incsearch-backward)
-map g/ <Plug>(incsearch-stay)
 
 
 
