@@ -10,23 +10,13 @@ if dein#load_state('~/.vim/bundle')
   call dein#begin('~/.vim/bundle')
 
   call dein#add('~/.vim/bundle/repos/github.com/Shougo/dein.vim')
-  call dein#add('Shougo/deoplete.nvim')
-  if !has('nvim')
-    call dein#add('roxma/nvim-yarp')
-    call dein#add('roxma/vim-hug-neovim-rpc')
-  endif
 
   " editorconfig
   call dein#add('editorconfig/editorconfig-vim')
 
-  " tomlファイル syntax
-  call dein#add('cespare/vim-toml')
-
   " JSのsyntax
   call dein#add('jelera/vim-javascript-syntax')
 
-  " vim上で行う言語等のコマンド補完
-  call dein#add('Shougo/neocomplete.vim')
   " 現在のzen-coding
   call dein#add('mattn/emmet-vim')
   " 味気ないlaststatusをかっこ良くしてくれる現在の人気
@@ -36,8 +26,6 @@ if dein#load_state('~/.vim/bundle')
   call dein#add('elzr/vim-json')
   " css3のsyntax
   call dein#add('hail2u/vim-css3-syntax')
-  " html5のindentとsyntaxを追加
-  call dein#add('othree/html5.vim')
 
   " slimのsyntax
   call dein#add('slim-template/vim-slim')
@@ -51,32 +39,18 @@ if dein#load_state('~/.vim/bundle')
   " vimgrepなどをagコマンドでやる
   call dein#add('rking/ag.vim')
 
-  " vimにカラー表示をしてくれる #f32 とか
-  call dein#add('lilydjwg/colorizer')
-
-  " color schema
-  call dein#add('jyota/vimColors')
-
-  " Rust programing syntax
-  call dein#add('rust-lang/rust.vim')
-
-  " rust completion
-  call dein#add('racer-rust/vim-racer')
-
   " highlight for vue
   call dein#add('posva/vim-vue')
 
+  " html5のindentとsyntaxを追加
+  call dein#add('othree/html5.vim')
   " high performance for golang
   call dein#add('fatih/vim-go')
-
-  call dein#add('yosssi/vim-ace')
 
   call dein#add('aklt/plantuml-syntax')
 
   call dein#add('leafgarland/typescript-vim')
   call dein#add('peitalin/vim-jsx-typescript')
-
-  call dein#add('hashivim/vim-terraform')
 
   call dein#end()
   call dein#save_state()
@@ -210,7 +184,7 @@ set hlsearch
 set viminfo='20,\"5000
 
 " matchit.vimの導入
-" source /usr/local/Cellar/vim/**/share/vim/**/macros/matchit.vim
+source /usr/share/vim/vim90/macros/matchit.vim
 source ~/.vim/bundle/repos/github.com/othree/html5.vim/autoload/htmlcomplete.vim
 let b:match_words = '<:>,<div.*>:</div>'
 
@@ -254,10 +228,6 @@ if has("autocmd")
   autocmd BufNewFile,BufRead *.rs setlocal ft=rust
   autocmd BufNewFile,BufRead *.dart setlocal ft=dart
   autocmd BufNewFile,BufRead ~/.zfunc/* :setlocal ft=zsh
-
-  " ctagsファイルの設定ファイル
-  autocmd BufNewFile,BufRead *.rb set tags+=;$HOME/.ruby.ctags;
-  autocmd BufNewFile,BufRead *.js set tags+=;$HOME/.javascript.ctags;
 
 endif
 
@@ -351,6 +321,7 @@ endfunction "}}}
 
 
 
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " lightline設定
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -362,47 +333,6 @@ endif
 " let g:lightline = {
 "   \ 'colorscheme': 'powerline',
 "   \ }
-
-
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" neocomplete設定
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" 補完候補のポップアップの色設定
-" Pmenu アイテムの色 PmenuSel 現在選択中の色 PmenuSbar スクロールバーの色 PmenuThumb スクロールバーの現在位置を示す色
-hi Pmenu ctermbg=lightgreen ctermfg=black
-hi PmenuSel ctermbg=lightred
-hi PmenuSbar ctermbg=black
-hi PmenuThumb ctermfg=lightcyan
-
-" 補完ウィンドウ自体の設定
-set completeopt=menuone
-
-" neocompleteの起動
-let g:neocomplete#enable_at_startup = 1
-" 挿入モード時に移動の方をメインに使う人はオススメの設定
-let g:neocomplete#enable_insert_char_pre = 1
-
-" 現在選択している候補をキャンセルし、確実にポップアップを削除
-inoremap <expr><C-e> neocomplete#cancel_popup() . "\<C-e>"
-" 現在選択している候補を確実に確定する
-inoremap <expr><C-y> neocomplete#close_popup() . "\<C-y>"
-
-
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" ctags設定
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" open ctag in tab/vertical split
-map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
-map <leader><C-\> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
-
-" taglist機能
-let Tlist_Ctags_Cmd = 'ctags'
-let Tlist_Show_One_File = 1
-let Tlist_Use_Right_Window = 1
-let Tlist_Exit_OnlyWindow = 1
-map <silent> <leader>tl :TlistToggle<CR>
 
 
 
@@ -424,14 +354,6 @@ endif
 let g:user_emmet_settings = {
       \ 'lang': 'ja'
       \ }
-
-
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" racer設定
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set hidden
-let g:racer_cmd = '$HOME/.cargo/bin/racer'
 
 
 
