@@ -43,7 +43,7 @@ export HOMEBREW_EDITOR=vim
 ## 環境変数PATHへのコマンドパスの追加 {{{
 
 export PATH=/usr/local/bin:$PATH
-export PATH=/usr/local/sbin:$PATH
+#export PATH=/usr/local/sbin:$PATH
 
 # }}}
 
@@ -79,16 +79,14 @@ export PATH=$(brew --prefix redis)/bin:$PATH
 
 # gloogle cloud sdk の COMMAND PATH {{{
 
-if [ -d /opt/homebrew/Caskroom/google-cloud-sdk ]; then
-  source /opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc
-  source /opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc
-fi
+source $(brew --caskroom google-cloud-sdk)/latest/google-cloud-sdk/completion.zsh.inc
+source $(brew --caskroom google-cloud-sdk)/latest/google-cloud-sdk/path.zsh.inc
 
 # }}}
 
 # java_home {{{
 
-export JAVA_HOME=`/usr/libexec/java_home`
+export JAVA_HOME=$(brew --prefix openjdk)/libexec/openjdk.jdk/Contents/Home
 
 # }}}
 
