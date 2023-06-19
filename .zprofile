@@ -63,8 +63,8 @@ eval "$(rbenv init -)"
 
 ## node.jsのバージョン管理ツール、npmの読み込み {{{
 
-export N_PREFIX=$HOME/.n
-export PATH=$N_PREFIX/bin:$PATH
+export VOLTA_HOME="$HOME/.volta"
+export PATH="$VOLTA_HOME/bin:$PATH"
 
 # }}}
 
