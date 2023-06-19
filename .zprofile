@@ -63,8 +63,8 @@ eval "$(rbenv init -)"
 
 ## node.jsのバージョン管理ツール、npmの読み込み {{{
 
-export VOLTA_HOME="$HOME/.volta"
-export PATH="$VOLTA_HOME/bin:$PATH"
+export VOLTA_HOME=$HOME/.volta
+export PATH=$VOLTA_HOME/bin:$PATH
 
 # }}}
 
@@ -95,9 +95,6 @@ export JAVA_HOME=$(brew --prefix openjdk)/libexec/openjdk.jdk/Contents/Home
 export GOPATH=$HOME/dev/go
 export GOBIN=$GOPATH/bin
 
-#export GOENV_ROOT=$HOME/.goenv
-#export PATH=$PATH:$GOENV_ROOT/bin
-
 export PATH=$GOROOT/bin:$PATH
 export PATH=$GOBIN:$PATH
 
@@ -116,7 +113,7 @@ export PATH=$HOME/fvm/default/bin:$PATH
 
 # }}}
 
-# Deno path {{{
+# Deno関係 {{{
 
 export PATH=$HOME/.deno/bin:$PATH
 
