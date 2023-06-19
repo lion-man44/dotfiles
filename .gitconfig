@@ -13,13 +13,10 @@
   df = diff
   dfc = diff --cached
   g = grep
-  r = remote
-  rpo = remote prune origin
-  rv = remote -v
+  r = rebase
   sh = show
   st = stash
   stl = stash list
-  ad = add
   ci = commit
   co = checkout
   sw = switch
