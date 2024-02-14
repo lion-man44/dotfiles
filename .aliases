@@ -12,7 +12,7 @@ alias hist='history -i'
 alias mkdir='mkdir -p'
 alias grep='grep --color'
 alias egrep='egrep --color'
-alias diff='colordiff'
+alias diff='difft'
 alias memory_clean='sudo purge'
 
 # }}}
@@ -41,24 +41,22 @@ alias pybrew='pythonbrew'
 alias ql='qlmanage -p "$@" >& /dev/null'
 
 ## pyenvのconfig warningを出さないようにするための設定
-alias brew='env PATH=${PATH/${HOME}\/\.pyenv\/shims:/} brew'
+#alias brew='env PATH=${PATH/${HOME}\/\.pyenv\/shims:/} brew'
 
 ## global ip
 alias global_ipv4='curl inet-ip.info'
 alias global_ipv4_2='curl httpbin.org/ip'
 alias global_ipv6='curl http://v6.ident.me'
 
-# }}}
-
-# Shellのカラーコード {{{
-
+# Shellのカラーコード
 alias shell-color-all='for fore in `seq 30 37`; do echo -e "\e[${fore}m \\\e[${fore}m \e[m"; for mode in 1 4 5; do; echo -en "\e[${fore};${mode}m \\\e[${fore};${mode}m \e[m"; for back in `seq 40 47`; do echo -en "\e[${fore};${back};${mode}m \\\e[${fore};${back};${mode}m \e[m"; done; echo; done; echo; done; echo " \\\e[m"'
 
-# }}}
-
-# docker command {{{
-
+# docker command
 alias dk='docker'
 alias dkc='dk compose'
+
+# AWS用のもの
+
+alias co='copilot'
 
 # }}}

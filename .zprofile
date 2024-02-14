@@ -55,8 +55,6 @@ export PATH=$(brew --prefix git)/share/git-core/contrib/diff-highlight:$PATH
 
 ## rbenvのパス設定 {{{
 
-#export RUBY_CONFIGURE_OPTS="--with-openssl-dir=`brew --prefix openssl@1.1` --with-readline-dir=`brew --prefix readline`"
-export PATH=$HOME/.rbenv/bin:$PATH
 eval "$(rbenv init -)"
 
 # }}}
@@ -116,5 +114,11 @@ export PATH=$HOME/fvm/default/bin:$PATH
 # Deno関係 {{{
 
 export PATH=$HOME/.deno/bin:$PATH
+
+# }}}
+
+# OrbStack {{{
+
+source ~/.orbstack/shell/init.zsh 2>/dev/null || :
 
 # }}}

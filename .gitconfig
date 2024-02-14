@@ -9,6 +9,7 @@
   s = status
   b = branch
   ba = branch -a
+  br = browse
   f = fetch
   df = diff
   dfc = diff --cached

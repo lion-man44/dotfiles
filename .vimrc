@@ -52,6 +52,9 @@ if dein#load_state('~/.vim/bundle')
   call dein#add('leafgarland/typescript-vim')
   call dein#add('peitalin/vim-jsx-typescript')
 
+  call dein#add('weirongxu/plantuml-previewer.vim')
+  call dein#add('tyru/open-browser.vim')
+
   call dein#end()
   call dein#save_state()
 endif
@@ -380,3 +383,9 @@ function! CurrentFile()
   echo expand('%:p')
 endfunction
 command! CurrentFile :call CurrentFile()
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" plantuml 設定
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:plantuml_previewersave_format = 'svg'
