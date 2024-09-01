@@ -168,3 +168,9 @@ setopt nonomatch
 stty eof undef
 
 # }}}
+
+## [Completion]
+## Completion scripts setup. Remove the following line to uninstall
+[[ -f /Users/lion/.dart-cli-completion/zsh-config.zsh ]] && . /Users/lion/.dart-cli-completion/zsh-config.zsh || true
+## [/Completion]
+
