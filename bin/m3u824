@@ -1,0 +1,9 @@
+#! /bin/sh
+
+if [ "$#" -ne 1 ]; then
+  echo "Usage: $(basename "$0") <m3u8_url>"
+  exit 1
+fi
+
+#ffmpeg -i "$1" -c copy -bsf:a aac_adtstoasc -map 0:v -map 0:a ~/Downloads/output.mp4
+yt-dlp "$1" -o ~/Downloads/output.mp4

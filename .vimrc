@@ -187,7 +187,7 @@ set hlsearch
 set viminfo='20,\"5000
 
 " matchit.vimの導入
-source /usr/share/vim/vim90/macros/matchit.vim
+source $VIMRUNTIME/macros/matchit.vim
 source ~/.vim/bundle/repos/github.com/othree/html5.vim/autoload/htmlcomplete.vim
 let b:match_words = '<:>,<div.*>:</div>'
 

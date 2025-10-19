@@ -33,6 +33,12 @@ source $(brew --prefix zsh-autosuggestions)/share/zsh-autosuggestions/zsh-autosu
 
 # }}}
 
+# 自作関数 {{{
+
+export PATH=~/dotfiles/bin:$PATH
+
+# }}}
+
 ## Default editor {{{
 
 export EDITOR=vim
@@ -77,8 +83,8 @@ export PATH=$(brew --prefix redis)/bin:$PATH
 
 # gloogle cloud sdk の COMMAND PATH {{{
 
-source $(brew --caskroom google-cloud-sdk)/latest/google-cloud-sdk/completion.zsh.inc
-source $(brew --caskroom google-cloud-sdk)/latest/google-cloud-sdk/path.zsh.inc
+[ -f $(brew --caskroom google-cloud-sdk)/latest/google-cloud-sdk/completion.zsh.inc ] && . $(brew --caskroom google-cloud-sdk)/latest/google-cloud-sdk/completion.zsh.inc
+[ -f $(brew --caskroom google-cloud-sdk)/latest/google-cloud-sdk/path.zsh.inc ] && . $(brew --caskroom google-cloud-sdk)/latest/google-cloud-sdk/path.zsh.inc
 
 # }}}
 
