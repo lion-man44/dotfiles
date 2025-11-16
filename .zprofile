@@ -11,12 +11,25 @@ export LESSCHARSET=UTF-8
 
 # }}}
 
-# zsh auto suggestions {{{
+## Default editor {{{
+
+export EDITOR=vim
+export HOMEBREW_EDITOR=vim
+
+# }}}
+
+## arm64用のsettings {{{
 
 if [ `uname -m` = "arm64" ]; then
-  export PATH=/opt/homebrew/bin:$PATH
+  export PATH=$(brew --prefix)/bin:$PATH
+  export PATH=$(brew --prefix)/sbin:$PATH
   export PATH=$(brew --prefix bison)/bin:$PATH
 fi
+
+## }}}
+
+# zsh auto suggestions {{{
+
 source $(brew --prefix zsh-autosuggestions)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # }}}
@@ -36,13 +49,6 @@ source $(brew --prefix zsh-autosuggestions)/share/zsh-autosuggestions/zsh-autosu
 # 自作関数 {{{
 
 export PATH=~/dotfiles/bin:$PATH
-
-# }}}
-
-## Default editor {{{
-
-export EDITOR=vim
-export HOMEBREW_EDITOR=vim
 
 # }}}
 
@@ -83,8 +89,10 @@ export PATH=$(brew --prefix redis)/bin:$PATH
 
 # gloogle cloud sdk の COMMAND PATH {{{
 
-[ -f $(brew --caskroom google-cloud-sdk)/latest/google-cloud-sdk/completion.zsh.inc ] && . $(brew --caskroom google-cloud-sdk)/latest/google-cloud-sdk/completion.zsh.inc
-[ -f $(brew --caskroom google-cloud-sdk)/latest/google-cloud-sdk/path.zsh.inc ] && . $(brew --caskroom google-cloud-sdk)/latest/google-cloud-sdk/path.zsh.inc
+GOOGLE_CLOUD_SDK_PATH=$(brew --caskroom google-cloud-sdk)/latest/google-cloud-sdk
+
+[ -f $GOOGLE_CLOUD_SDK_PATH/completion.zsh.inc ] && . $GOOGLE_CLOUD_SDK_PATH/completion.zsh.inc
+[ -f $GOOGLE_CLOUD_SDK_PATH/path.zsh.inc ] && . $GOOGLE_CLOUD_SDK_PATH/path.zsh.inc
 
 # }}}
 
