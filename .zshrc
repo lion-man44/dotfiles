@@ -6,16 +6,20 @@ setopt noflowcontrol
 
 # }}}
 
-# zshの基本的な補完機能 {{{
+# zshの補完定義ファイルの読み込み準備（compinit より前に fpath を整える）{{{
 
-autoload -U compinit
-compinit
+# brew は $fpath の「後ろ」に置く:
+#   - _hub / _brew / _gh / _mise / _aws / _docker などが有効になる
+#   - _git は zsh 同梱の説明付きの方を優先させる（_hub がこちらを前提にしているため）
+
+fpath=($HOME/.zfunc $fpath $(brew --prefix)/share/zsh/site-functions)
 
 # }}}
 
-# zshの補完定義ファイルの読み込み準備 {{{
+# zshの基本的な補完機能 {{{
 
-fpath=($HOME/.zfunc/ $fpath)
+autoload -Uz compinit
+compinit
 
 # }}}
 
@@ -173,3 +177,9 @@ stty eof undef
 ## Completion scripts setup. Remove the following line to uninstall
 [[ -f /Users/lion/.dart-cli-completion/zsh-config.zsh ]] && . /Users/lion/.dart-cli-completion/zsh-config.zsh || true
 ## [/Completion]
+
+# mise (node / pnpm などの version 管理) {{{
+
+eval "$(mise activate zsh)"
+
+# }}}
