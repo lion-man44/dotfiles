@@ -82,7 +82,7 @@ export PATH=$VOLTA_HOME/bin:$PATH
 
 export PGDATA=/usr/local/var/postgres
 
-export PATH=$(brew --prefix mysql@5.7)/bin:$PATH
+# export PATH=$(brew --prefix mysql@5.7)/bin:$PATH
 export PATH=$(brew --prefix redis)/bin:$PATH
 
 # }}}
