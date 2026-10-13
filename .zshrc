@@ -96,6 +96,16 @@ precmd () {
     psvar=()
     LANG=en_US.UTF-8 vcs_info
     [[ -n "$vcs_info_msg_0_" ]] && psvar[1]="$vcs_info_msg_0_"
+
+    # linked worktree にいるときだけ psvar[2] に worktree 名を入れる
+    # （git-dir が .git/worktrees/<名前> を指していれば linked worktree。
+    #   本体チェックアウト・git 管理外・submodule では何も表示しない）
+    local _gitdir
+    _gitdir=$(git rev-parse --git-dir 2>/dev/null)
+    if [[ -n "$_gitdir" ]]; then
+        _gitdir=${_gitdir:A}
+        [[ "$_gitdir" == */.git/worktrees/* ]] && psvar[2]="wt:${_gitdir:t}"
+    fi
 }
 
 # }}}
@@ -105,7 +115,7 @@ precmd () {
 # {{{
 
 PROMPT='%{${fg[cyan]}%}%~%{${reset_color}%}
-[%n]%1(v|%F{green}%1v%f|)$ ' # %nに戻す
+[%n]%1(v|%F{green}%1v%f|)%2(v|%F{magenta}(%2v)%f|)$ ' # %nに戻す
 
 # }}}
 
