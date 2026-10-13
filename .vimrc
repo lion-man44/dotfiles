@@ -148,8 +148,9 @@ set ffs=unix,dos,mac
 " カーソル制御関係
 " 制御シーケンスの変更
 "let &t_ti.="\e]1 q"
-let &t_SI.="\e]50;CursorShape=1\x7"
-let &t_EI.="\e]50;CursorShape=0\x7"
+let &t_SI.="\e[6 q"
+let &t_SR.="\e[4 q"
+let &t_EI.="\e[2 q"
 "let &t_te.="\e]0 q"
 " カーソルを行頭、行末で止まらないようにする
 set whichwrap=b,s,h,l,<,>,[,]
