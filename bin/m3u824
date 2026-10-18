@@ -1,9 +1,13 @@
 #! /bin/sh
 
-if [ "$#" -ne 1 ]; then
-  echo "Usage: $(basename "$0") <m3u8_url>"
+if [ "$#" -ne 2 ]; then
+  echo "Usage: $(basename "$0") <m3u8_url> <referer_url>"
   exit 1
 fi
 
 #ffmpeg -i "$1" -c copy -bsf:a aac_adtstoasc -map 0:v -map 0:a ~/Downloads/output.mp4
-yt-dlp "$1" -o ~/Downloads/output.mp4
+yt-dlp -v \
+  --impersonate chrome \
+  --cookies-from-browser chrome \
+  --add-header "Referer: $2" \
+  "$1" -o ~/Downloads/output.mp4

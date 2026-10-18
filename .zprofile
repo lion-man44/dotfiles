@@ -18,6 +18,12 @@ export HOMEBREW_EDITOR=vim
 
 # }}}
 
+## homebrewnoのbin {{{
+
+export PATH=/opt/homebrew/bin/:$PATH
+
+## }}}
+
 ## arm64用のsettings {{{
 
 if [ `uname -m` = "arm64" ]; then
@@ -135,5 +141,11 @@ export PATH=$HOME/.deno/bin:$PATH
 # OrbStack {{{
 
 source ~/.orbstack/shell/init.zsh 2>/dev/null || :
+
+# }}}
+
+# 有名じゃないものの独自path {{{
+
+export PATH="$PATH:/Users/lion/.local/bin"
 
 # }}}

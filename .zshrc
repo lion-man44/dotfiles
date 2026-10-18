@@ -193,3 +193,6 @@ stty eof undef
 eval "$(mise activate zsh)"
 
 # }}}
+
+# Created by `pipx` on 2026-04-15 02:00:23
+export PATH="$PATH:/Users/lion/.local/bin"
