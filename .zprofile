@@ -103,12 +103,6 @@ GOOGLE_CLOUD_SDK_PATH=$(brew --caskroom google-cloud-sdk)/latest/google-cloud-sd
 
 # }}}
 
-# java_home {{{
-
-export JAVA_HOME=$(brew --prefix openjdk)/libexec/openjdk.jdk/Contents/Home
-
-# }}}
-
 # Go path {{{
 
 export GOPATH=$HOME/dev/go

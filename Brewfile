@@ -79,12 +79,8 @@ brew "neovim"
 brew "nkf"
 # Port scanning utility for large networks
 brew "nmap"
-# Development kit for the Java programming language
-brew "openjdk"
 # Simplistic interactive filtering tool
 brew "peco"
-# Draw UML diagrams
-brew "plantuml"
 # CLI for PlanetScale Database
 brew "pscale"
 # Interpreted, interactive, object-oriented programming language
