@@ -55,8 +55,8 @@ alias shell-color-all='for fore in `seq 30 37`; do echo -e "\e[${fore}m \\\e[${f
 alias dk='docker'
 alias dkc='dk compose'
 
-# AWS用のもの
+# codex用のもの
 
-alias co='copilot'
+alias co='codex -c approval_policy=\"never\" -c default_permissions=\":danger-full-access\"'
 
 # }}}
