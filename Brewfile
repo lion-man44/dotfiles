@@ -131,8 +131,6 @@ brew "zsh-autosuggestions"
 brew "zsh-completions"
 # Fish shell like syntax highlighting for zsh
 brew "zsh-syntax-highlighting"
-# Memory training application
-cask "anki"
 # Application uninstaller
 cask "appcleaner"
 # Web browser focusing on privacy
@@ -145,6 +143,8 @@ cask "claude"
 cask "claude-code"
 # OpenAI's coding agent that runs in your terminal
 cask "codex"
+# Menu bar app for tracking agentic coding limits and usage
+cask "codexbar"
 # Database manager for MySQL, PostgreSQL, SQL Server, MongoDB, SQLite and others
 cask "dbgate"
 # Voice and text chat software
@@ -161,8 +161,6 @@ cask "godot"
 cask "google-chrome"
 # App to write, plan, collaborate, and get organised
 cask "notion"
-# Open-source software for live streaming and screen recording
-cask "obs"
 # Knowledge base that works on top of a local folder of plain text Markdown files
 cask "obsidian"
 # Replacement for Docker Desktop
@@ -173,14 +171,14 @@ cask "stablyai/orca/orca", trusted: true
 cask "raycast"
 # Move and resize windows using keyboard shortcuts or snap areas
 cask "rectangle"
-# Ruby on Rails IDE
-cask "rubymine"
 # Web browser
 cask "safari-technology-preview"
 # Plugin for AWS CLI to start and end sessions that connect to managed instances
 cask "session-manager-plugin"
 # Team communication and collaboration software
 cask "slack"
+# CSV editor
+cask "smoothcsv"
 # Configuration application for the Ultimate Hacking Keyboard
 cask "uhk-agent"
 # Multimedia player
@@ -191,14 +189,8 @@ cask "xquartz"
 cask "zed"
 # Video communication and virtual meeting platform
 cask "zoom"
-mas "GarageBand", id: 682658836
-mas "iMovie", id: 408981434
 mas "Keynote", id: 361285480
 mas "Kindle", id: 302584613
-mas "LINE", id: 539883307
-mas "MARKETSPEED", id: 946680495
 mas "Numbers", id: 361304891
-mas "Pages", id: 361309726
-mas "Quiver", id: 866773894
 mas "Tailscale", id: 1475387142
 npm "corepack"
